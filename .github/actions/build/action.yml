@@ -1,27 +1,27 @@
-name: GDExtension Build
-description: Build GDExtension
+name       : GDExtension Build
+description:             Build GDExtension
 
 inputs:
   platform:
-    required: true
-    description: Target platform.
+    required   : true
+    description: Target @@@@platform.
   arch:
-    required: true
+    required   : true
     description: Target architecture.
   float-precision:
-    default: 'single'
+    default    : 'single'
     description: Float precision (single or double).
   build-target-type:
-    default: 'template_debug'
+    default    : 'template_debug'
     description: Build type (template_debug or template_release).
   scons-cache:
-    default: .scons-cache/
-    description: Scons cache location.
+    default    : .scons-cache/
+    description:  Scons cache location.
   em_version:
-    default: 3.1.39
-    description: Emscripten version.
+    default    : 3.1.39
+    description: Emscripten version@@@@@.
   em_cache_folder:
-    default: emsdk-cache
+    default    :      emsdk-cache
     description: Emscripten cache folder.
 
 runs:
