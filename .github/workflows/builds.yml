@@ -20,12 +20,10 @@ jobs:
             float-precision: single
             arch           : x86_32
             os             : windows-latest
-            build-target-type: template_debug
           - platform       : windows
             float-precision: single
             arch           : x86_64
             os             : windows-latest
-            build-target-type: template_debug
           - platform       : macos
             float-precision: single
             arch           : universal
@@ -63,12 +61,10 @@ jobs:
             float-precision: double
             arch           : x86_32
             os             : windows-latest
-            build-target-type: template_debug
           - platform       : windows
             float-precision: double
             arch           : x86_64
             os             : windows-latest
-            build-target-type: template_debug
           - platform       : macos
             float-precision: double
             arch           : universal
@@ -117,10 +113,9 @@ jobs:
       - name: 🔗GDExtension  🔗Build
         uses: ./.github/actions/build
         with:
-          platform         : ${{ matrix.platform        }}
-          arch             : ${{ matrix.arch            }}
-          float-precision  : ${{ matrix.float-precision }}
-          build-target-type: template_release
+          platform       : ${{ matrix.platform        }}
+          arch           : ${{ matrix.arch            }}
+          float-precision: ${{ matrix.float-precision }}
 # Sign
       - name: Mac Sign
         # Disable sign if secrets are not set
@@ -148,6 +143,11 @@ jobs:
           name: godot-cpp-template
           path: |
             ${{ github.workspace }}/bin/**
+
+
+
+
+
 
 
 
