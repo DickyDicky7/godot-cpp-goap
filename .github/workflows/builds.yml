@@ -20,12 +20,12 @@ jobs:
             float-precision: single
             arch           : x86_32
             os             : windows-latest
-            build-target-type: 'template_debug'
+            build-target-type: template_debug
           - platform       : windows
             float-precision: single
             arch           : x86_64
             os             : windows-latest
-            build-target-type: 'template_debug'
+            build-target-type: template_debug
           - platform       : macos
             float-precision: single
             arch           : universal
@@ -63,12 +63,12 @@ jobs:
             float-precision: double
             arch           : x86_32
             os             : windows-latest
-            build-target-type: 'template_debug'
+            build-target-type: template_debug
           - platform       : windows
             float-precision: double
             arch           : x86_64
             os             : windows-latest
-            build-target-type: 'template_debug'
+            build-target-type: template_debug
           - platform       : macos
             float-precision: double
             arch           : universal
