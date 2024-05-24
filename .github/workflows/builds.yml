@@ -20,10 +20,12 @@ jobs:
             float-precision: single
             arch           : x86_32
             os             : windows-latest
+            build-target-type: 'template_debug'
           - platform       : windows
             float-precision: single
             arch           : x86_64
             os             : windows-latest
+            build-target-type: 'template_debug'
           - platform       : macos
             float-precision: single
             arch           : universal
@@ -61,10 +63,12 @@ jobs:
             float-precision: double
             arch           : x86_32
             os             : windows-latest
+            build-target-type: 'template_debug'
           - platform       : windows
             float-precision: double
             arch           : x86_64
             os             : windows-latest
+            build-target-type: 'template_debug'
           - platform       : macos
             float-precision: double
             arch           : universal
@@ -139,11 +143,21 @@ jobs:
         run: |
           Remove-Item bin/* -Include *.exp,*.lib,*.pdb -Force
       - name:         Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4.3.3
         with:
           name: godot-cpp-template
           path: |
             ${{ github.workspace }}/bin/**
+          merge-multiple: true
+
+
+
+
+
+
+
+
+
 
 
 
