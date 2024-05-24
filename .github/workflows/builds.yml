@@ -143,12 +143,18 @@ jobs:
         run: |
           Remove-Item bin/* -Include *.exp,*.lib,*.pdb -Force
       - name:         Upload Artifact
-        uses: actions/upload-artifact@v4.3.3
+        uses: actions/upload-artifact@3
         with:
           name: godot-cpp-template
           path: |
             ${{ github.workspace }}/bin/**
-          merge-multiple: true
+
+
+
+
+
+
+
 
 
 
