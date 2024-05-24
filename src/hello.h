@@ -5,10 +5,13 @@
 #include <windows.h>
 #endif
 
-namespace godot
+#include <godot_cpp/classes/node.hpp>
+
+namespace godot : public Node
 {
 	class Hello
 	{
+		GDCLASS(Hello  , Node )
 protected:
 	static void _bind_methods();
 
