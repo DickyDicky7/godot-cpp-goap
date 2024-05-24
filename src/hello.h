@@ -7,9 +7,9 @@
 
 #include <godot_cpp/classes/node.hpp>
 
-namespace godot : public Node
+namespace godot 
 {
-	class Hello
+	class Hello : public Node
 	{
 		GDCLASS(Hello  , Node )
 protected:
