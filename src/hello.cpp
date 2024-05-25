@@ -17,13 +17,13 @@ Hello::~Hello()
 int
 Hello::Greet()
 {
-	return 69;
+    return 69;
 }
 
 void
 Hello      ::_bind_methods()
 {
-	ClassDB:: bind_method (D_METHOD("Greet"), &Hello::Greet);
+    ClassDB:: bind_method (D_METHOD("Greet"), &Hello::Greet);
 }
  
 

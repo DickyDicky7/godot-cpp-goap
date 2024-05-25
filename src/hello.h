@@ -9,21 +9,28 @@
 
 namespace godot 
 {
-	class Hello : public Node
-	{
-		GDCLASS(Hello  , Node )
+    class Hello : public Node
+    {
+  GDCLASS(Hello ,        Node )
 protected:
-	static void _bind_methods();
+    static void _bind_methods();
 
 public   :
-		  Hello();
-	     ~Hello();
+          Hello();
+         ~Hello();
 
-	int   Greet();
-	};
+    int   Greet();
+    };
 }
 
 #endif // HELLO_H
+
+
+
+
+
+
+
 
 
 
