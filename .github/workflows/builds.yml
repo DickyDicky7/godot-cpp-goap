@@ -143,7 +143,7 @@ jobs:
         with:
           name:  godot-cpp-goap
           path: |
-            ${{ github.workspace }}/bin/**
+            ${{ github.workspace }}/demo/bin/**
 
 
 
