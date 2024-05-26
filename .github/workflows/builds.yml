@@ -136,8 +136,8 @@ jobs:
         if   : ${{ matrix.platform == 'windows' }}
         shell: pwsh
         run: |
-          Remove-Item            bin/* -Include *.exp,*.lib,*.pdb -Force
-            Copy-Item -Path demo/bin/godot-cpp-goap.gdextension   -Destination bin/
+          Remove-Item            bin/* -Include   *.exp,*.lib,*.pdb -Force
+            Copy-Item -Path demo/bin/godot-cpp-goap.gdextension     -Destination bin/
       - name:         Upload Artifact
         uses: actions/upload-artifact@v3
         with:
