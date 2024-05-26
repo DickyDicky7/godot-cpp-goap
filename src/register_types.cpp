@@ -4,7 +4,8 @@
 #include                                                     <godot_cpp/core/defs.hpp>
 #include                                                                             <godot_cpp/godot.hpp>
 
-#include "hello.h"
+#include     "hello.h"
+#include "plan_goal.h"
 
 using namespace godot;
 
@@ -14,7 +15,8 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     {
         return;
     }
-    ClassDB::register_class<Hello>();
+    ClassDB::register_class<Hello   >();
+    ClassDB::register_class<PlanGoal>();
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level)
