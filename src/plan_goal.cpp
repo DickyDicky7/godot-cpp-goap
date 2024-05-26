@@ -57,10 +57,28 @@ PlanGoal::set_change_over_time(float const& change_over_time)
 void
 PlanGoal::_bind_methods()
 {
+    ClassDB::bind_method(D_METHOD("get_discontentment", "value"), &PlanGoal::get_discontentment);
+
     ClassDB::bind_method(D_METHOD("set_name", "name"), &PlanGoal::set_name);
     ClassDB::bind_method(D_METHOD("get_name"        ), &PlanGoal::get_name);
 
-    ADD_PROPERTY(PropertyInfo(Variant::STRING_NAME, "name"), "set_name", "get_name");
+    ClassDB::bind_method(D_METHOD("set_value", "value"), &PlanGoal::set_value);
+    ClassDB::bind_method(D_METHOD("get_value"         ), &PlanGoal::get_value);
+
+    ClassDB::bind_method(D_METHOD("set_change_over_time", "change_over_time"), &PlanGoal::set_change_over_time);
+    ClassDB::bind_method(D_METHOD("get_change_over_time"                    ), &PlanGoal::get_change_over_time);
+
+    ADD_PROPERTY(PropertyInfo(Variant::STRING_NAME,     "name")
+                                                  , "set_name"
+                                                  , "get_name");
+
+    ADD_PROPERTY(PropertyInfo(Variant::FLOAT,     "value")
+                                            , "set_value"
+                                            , "get_value");
+
+    ADD_PROPERTY(PropertyInfo(Variant::FLOAT,     "change_over_time")
+                                            , "set_change_over_time"
+                                            , "get_change_over_time");
 }
 
 
