@@ -12,7 +12,7 @@ def validate_parent_dir (key, val, env):
         raise UserError("'%s' is not a directory: %s" % (key, os.path.dirname(val)     ));
 
 
-libname    = "EXTENSION-NAME";
+libname    = "godot-cpp-goap";
 projectdir = "demo"          ;
 
 localEnv = Environment(tools=["default"], PLATFORM="");
