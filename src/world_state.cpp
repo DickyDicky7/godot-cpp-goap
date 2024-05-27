@@ -1,6 +1,9 @@
 #include "world_state.h"
 #include <godot_cpp/core/class_db.hpp>
 
+using     namespace
+godot ;
+
 void
 godot::WorldState::_bind_methods()
 {
@@ -36,7 +39,7 @@ godot::WorldState::get_state_collection(                                  ) cons
 void
 godot::WorldState::set_state_collection(const Dictionary& state_collection)
 {
-                 this->state_collection                 = state_collection
+                 this->state_collection                 = state_collection;
 }
 
 Variant
@@ -67,3 +70,10 @@ const  Dictionary&    required_state_collection    ) const
             return 1;
     }
 }
+
+
+
+
+
+
+
