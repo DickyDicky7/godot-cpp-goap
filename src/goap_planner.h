@@ -9,11 +9,6 @@
 #include                                <godot_cpp/variant/typed_array.hpp>
 #include                                                                  <godot_cpp/variant/variant.hpp>
 
-//#include                                            "world_state.h"
-//#include                                                          "goal.h"
-//#include                                                                 "action.h"
-//#include <godot_cpp/variant/array>
-
 namespace godot
 {
     class Goal      ;
@@ -36,11 +31,11 @@ public   :
           GOAPPlanner();
          ~GOAPPlanner();
 
-                void              set_action_collection(const TypedArray<Action>& action_collection)      ;
-          TypedArray<Action> get_action_collection(                                                ) const;
+                void         set_action_collection(const TypedArray<Action>& action_collection)      ;
+          TypedArray<Action> get_action_collection(                                           ) const;
 
-                void                set_goal_collection(const TypedArray<Goal  >&   goal_collection)      ;
-          TypedArray<Goal  >   get_goal_collection(                                                ) const;
+                void           set_goal_collection(const TypedArray<Goal  >&   goal_collection)      ;
+          TypedArray<Goal  >   get_goal_collection(                                           ) const;
 
           TypedArray<Action> plan(const WorldState& world_state) const;
 
