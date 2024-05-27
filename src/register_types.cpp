@@ -23,9 +23,9 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     ClassDB::register_class<Hello>();
     ClassDB::register_class<PlanGoal  >();
     ClassDB::register_class<PlanAction>();
+    ClassDB::register_class<WorldState>();
     ClassDB::register_class<    Goal  >();
     ClassDB::register_class<  Action  >();
-    ClassDB::register_class<WorldState>();
     ClassDB::register_class<GOAPPlanner>();
 }
 
