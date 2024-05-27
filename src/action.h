@@ -8,12 +8,13 @@
 #include <godot_cpp/classes/resource.hpp>
 #include                                <godot_cpp/variant/dictionary.hpp>
 #include                                                                 <godot_cpp/variant/variant.hpp>
-
+#include <godot_cpp/classes/node3d.hpp>
+//#include <godot_cpp/classes/node>
 namespace godot
 {
 
     class WorldState;
-    class Node3D;
+    //class Node3D;
 
     class Action : public Resource
     {
