@@ -26,12 +26,12 @@ godot::GOAPPlanner::~GOAPPlanner()
 }
 
 void
-godot::GOAPPlanner::set_action_collection(const TypedArray<Ref<Action>>& action_collection)
+godot::GOAPPlanner::set_action_collection(const Ref<TypedArray<Action>>& action_collection)
 {
     this->              action_collection                              = action_collection;
 }
 
-TypedArray<Ref<Action>>
+Ref<TypedArray<Action>>
 godot::GOAPPlanner::get_action_collection(                                                ) const
 {
 	return
@@ -39,23 +39,23 @@ godot::GOAPPlanner::get_action_collection(                                      
 }
 
 void
-godot::GOAPPlanner::set_goal_collection(const TypedArray<Ref<Goal>>& goal_collection)
+godot::GOAPPlanner::set_goal_collection(const Ref<TypedArray<Goal>>& goal_collection)
 {
     this->              goal_collection                            = goal_collection;
 }
 
-TypedArray<Ref<Goal>>  
+Ref<TypedArray<Goal>>
 godot::GOAPPlanner::get_goal_collection(                                            ) const
 {
 	return
     this->              goal_collection;
 }
 
-TypedArray<Ref<Action>> godot::GOAPPlanner::plan(const WorldState& world_state) const
+Ref<TypedArray<Action>> godot::GOAPPlanner::plan(const WorldState& world_state) const
 {
 
 return
-TypedArray<Ref<Action>>();
+Ref<TypedArray<Action>>;
     /*TypedArray<Action> valid_action_collection;
     for (int index = 0; index < action_collection;++index)
     {

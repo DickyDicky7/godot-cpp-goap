@@ -9,16 +9,16 @@
 #include                                <godot_cpp/variant/typed_array.hpp>
 #include                                                                  <godot_cpp/variant/variant.hpp>
 
-#include                                            "world_state.h"
-#include                                                          "goal.h"
-#include                                                                 "action.h"
+//#include                                            "world_state.h"
+//#include                                                          "goal.h"
+//#include                                                                 "action.h"
 
 
 namespace godot
 {
-    //class Goal      ;
-    //class     Action;
-    //class WorldState;
+    class Goal      ;
+    class     Action;
+    class WorldState;
 
     class GOAPPlanner : public Resource
     {
@@ -28,21 +28,21 @@ namespace godot
 protected:
 
           static     void     _bind_methods ();
-          TypedArray<Ref<Action>> action_collection;
-          TypedArray<Ref<Goal  >>   goal_collection;
+          Ref<TypedArray<Action>> action_collection;
+          Ref<TypedArray<Goal  >>   goal_collection;
 
 public   :
 
           GOAPPlanner();
          ~GOAPPlanner();
 
-                void              set_action_collection(const TypedArray<Ref<Action>>& action_collection)      ;
-          TypedArray<Ref<Action>> get_action_collection(                                                ) const;
+                void              set_action_collection(const Ref<TypedArray<Action>>& action_collection)      ;
+          Ref<TypedArray<Action>> get_action_collection(                                                ) const;
 
-                void                set_goal_collection(const TypedArray<Ref<Goal  >>&   goal_collection)      ;
-          TypedArray<Ref<Goal  >>   get_goal_collection(                                                ) const;
+                void                set_goal_collection(const Ref<TypedArray<Goal  >>&   goal_collection)      ;
+          Ref<TypedArray<Goal  >>   get_goal_collection(                                                ) const;
 
-          TypedArray<Ref<Action>> plan(const WorldState& world_state) const;
+          Ref<TypedArray<Action>> plan(const WorldState& world_state) const;
 
     };
 }
