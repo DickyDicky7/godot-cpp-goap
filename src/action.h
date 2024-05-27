@@ -12,6 +12,7 @@
 
 namespace godot
 {
+class WorldState;
     class Action : public Node
     {
 
