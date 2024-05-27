@@ -7,7 +7,10 @@
 #include     "hello.h"
 #include "plan_goal.h"
 #include "plan_action.h"
+#include                      "goal.h"
+#include "action.h"
 #include               "world_state.h"
+#include "goap_planner.h"
 
 using namespace godot;
 
@@ -20,7 +23,10 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     ClassDB::register_class<Hello>();
     ClassDB::register_class<PlanGoal  >();
     ClassDB::register_class<PlanAction>();
+    ClassDB::register_class<    Goal  >();
+    ClassDB::register_class<  Action  >();
     ClassDB::register_class<WorldState>();
+    ClassDB::register_class<GOAPPlanner>();
 }
 
 void uninitialize_gdextension_types(ModuleInitializationLevel p_level)

@@ -58,7 +58,7 @@ bool
 godot::WorldState::is_required_state_collection_met(
 const  Dictionary&    required_state_collection    ) const
 {
-	         Array              keys       =
+             Array              keys       =
                       required_state_collection.keys();
     for (int index = 0; index < keys.size();  ++index)
     {

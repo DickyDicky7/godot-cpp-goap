@@ -22,6 +22,7 @@ protected:
           Dictionary       state_collection;
 
 public   :
+
           WorldState();
          ~WorldState();
 
@@ -32,10 +33,19 @@ public   :
           void         set_state               (const    Variant &key                      , const Variant &value);
 
           bool is_required_state_collection_met(const Dictionary &required_state_collection) const;
+
     };
 }
 
-#endif //@WORLD_STATE_H
+#endif//WORLD_STATE_H
+
+
+
+
+
+
+
+
 
 
 
