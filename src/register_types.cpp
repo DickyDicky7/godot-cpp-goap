@@ -29,8 +29,6 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     ClassDB::register_class<  Action  >();
     ClassDB::register_class<GOAPPlanner>();
 
-      ClassDB:: bind_method (D_METHOD("are_precondition_collection_met", "world_state"), &Action::are_precondition_collection_met);
-      ClassDB:: bind_method (D_METHOD(    "apply_effect_collection"    , "world_state"), &Action::    apply_effect_collection    );
 
 }
 
