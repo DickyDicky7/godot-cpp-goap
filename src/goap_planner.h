@@ -28,21 +28,21 @@ namespace godot
 protected:
 
           static     void     _bind_methods ();
-          Ref<TypedArray<Action>> action_collection;
-          Ref<TypedArray<Goal  >>   goal_collection;
+          TypedArray<Action> action_collection;
+          TypedArray<Goal  >   goal_collection;
 
 public   :
 
           GOAPPlanner();
          ~GOAPPlanner();
 
-                void              set_action_collection(const Ref<TypedArray<Action>>& action_collection)      ;
-          Ref<TypedArray<Action>> get_action_collection(                                                ) const;
+                void              set_action_collection(const TypedArray<Action>& action_collection)      ;
+          TypedArray<Action> get_action_collection(                                                ) const;
 
-                void                set_goal_collection(const Ref<TypedArray<Goal  >>&   goal_collection)      ;
-          Ref<TypedArray<Goal  >>   get_goal_collection(                                                ) const;
+                void                set_goal_collection(const TypedArray<Goal  >&   goal_collection)      ;
+          TypedArray<Goal  >   get_goal_collection(                                                ) const;
 
-          Ref<TypedArray<Action>> plan(const WorldState& world_state) const;
+          TypedArray<Action> plan(const WorldState& world_state) const;
 
     };
 }
