@@ -30,10 +30,10 @@ public   :
           GOAPPlanner();
          ~GOAPPlanner();
 
-                void set_action_collection(const Dictionary& action_collection)      ;
+                void set_action_collection(const TypedArray<Action>& action_collection)      ;
           Dictionary get_action_collection(                                   ) const;
 
-                void   set_goal_collection(const Dictionary&   goal_collection)      ;
+                void   set_goal_collection(const TypedArray<Goal  >&   goal_collection)      ;
           Dictionary   get_goal_collection(                                   ) const;
 
           TypedArray<Action> plan(const WorldState& world_state) const;
