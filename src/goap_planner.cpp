@@ -1,5 +1,7 @@
 #include  "goap_planner.h"
 #include <godot_cpp/core/class_db.hpp>
+#include "action.h"
+#include          "goal.h"
 
 using     namespace
 godot ;

@@ -5,7 +5,7 @@
 #include <windows.h>
 #endif
 
-#include "world_state.h"
+class WorldState;
 #include <godot_cpp/classes/node.hpp>
 #include                                <godot_cpp/variant/dictionary.hpp>
 #include                                                                 <godot_cpp/variant/variant.hpp>
