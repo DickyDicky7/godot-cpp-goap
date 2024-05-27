@@ -9,8 +9,10 @@
 #include                            <godot_cpp/variant/typed_array.hpp>
 #include                                                              <godot_cpp/variant/variant.hpp>
 
-class Action;
-class Goal;
+#include "action.h"
+#include          "goal.h"
+#include "world_state.h"
+
 namespace godot
 {
     class GOAPPlanner : public Node
