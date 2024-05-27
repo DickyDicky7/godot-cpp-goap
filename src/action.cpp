@@ -1,84 +1,8 @@
 #include "action.h"
 #include <godot_cpp/core/class_db.hpp>
-#include "world_state.h"
-#include <godot_cpp/variant/array.hpp>
+
 using     namespace
 godot ;
-
-
-godot::Action:: Action()
-{
-    this->cost = 1.0f;
-
-}
-
-godot::Action::~Action()
-{
-}
-
-void
-godot::Action::set_precondition_collection(const Dictionary& precondition_collection)
-{
-    this->         precondition_collection                 = precondition_collection;
-}
-
-Dictionary
-godot::Action::get_precondition_collection(                                         ) const
-{
-    return
-    this->         precondition_collection;
-}
-
-void
-godot::Action::set_effect_collection(const Dictionary& effect_collection)
-{
-    this->         effect_collection                 = effect_collection;
-}
-
-Dictionary
-godot::Action::get_effect_collection(                                   ) const
-{
-    return
-    this->         effect_collection;
-}
-
-void
-godot::Action::set_cost(const float& cost)
-{
-    this->         cost            = cost;
-}
-
-float
-godot::Action::get_cost(                 ) const
-{
-    return
-    this->         cost;
-}
-
-bool
-godot::Action::are_precondition_collection_met(const WorldState& world_state) const
-{
-    return                                                       world_state.is_required_state_collection_met
-                  (precondition_collection);
-}
-
-void
-godot::Action::    apply_effect_collection    (      WorldState& world_state)
-{
-             Array              keys = this->effect_collection.keys(       );
-    for (int index = 0; index < keys.size(); ++index)
-    {
-        world_state.set_state ( keys[index], effect_collection[keys[index]]);
-    }
-}
-
-
-
-
-
-
-
-
 
 void
 godot::Action::_bind_methods()
@@ -108,4 +32,88 @@ godot::Action::_bind_methods()
                                               , "get_cost");
 
 }
+
+godot::Action:: Action()
+{
+    this->cost = 1.0f;
+}
+
+godot::Action::~Action()
+{
+}
+
+void
+godot::Action::set_precondition_collection(const Dictionary& precondition_collection)
+{
+    this->         precondition_collection                 = precondition_collection;
+}
+
+Dictionary
+godot::Action::get_precondition_collection(                                         )
+const
+{
+    return
+    this->         precondition_collection;
+}
+
+void
+godot::Action::set_effect_collection(const Dictionary& effect_collection)
+{
+    this->         effect_collection                 = effect_collection;
+}
+
+Dictionary
+godot::Action::get_effect_collection(                                   )
+const
+{
+    return
+    this->         effect_collection;
+}
+
+void
+godot::Action::set_cost(const float& cost)
+{
+    this->         cost            = cost;
+}
+
+float
+godot::Action::get_cost(                 )
+const
+{
+    return
+    this->         cost;
+}
+
+bool
+godot::Action::are_precondition_collection_met(const WorldState& world_state)
+const
+{
+    return                                                       world_state.is_required_state_collection_met
+                  (precondition_collection);
+}
+
+void
+godot::Action::    apply_effect_collection    (      WorldState& world_state)
+{
+             Array              keys = this->effect_collection.keys(       );
+    for (int index = 0; index < keys.size(); ++index)
+    {
+        world_state.set_state ( keys[index], effect_collection[keys[index]]);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

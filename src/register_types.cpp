@@ -8,9 +8,9 @@
 #include "plan_goal.h"
 #include "plan_action.h"
 #include               "world_state.h"
-#include                      "goal.h"
-#include "action.h"
-#include "goap_planner.h"
+#include                             "goal.h"
+#include                                    "action.h"
+#include                                             "goap_planner.h"
 
 using namespace godot;
 
@@ -20,13 +20,13 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     {
         return;
     }
-//GDCLASS(WorldState,Resource);
-    ClassDB::register_class<WorldState>();
+
     ClassDB::register_class<Hello>();
     ClassDB::register_class<PlanGoal  >();
     ClassDB::register_class<PlanAction>();
-    ClassDB::register_class<    Goal  >();
-    ClassDB::register_class<  Action  >();
+    ClassDB::register_class<WorldState >();
+    ClassDB::register_class<      Goal >();
+    ClassDB::register_class<Action     >();
     ClassDB::register_class<GOAPPlanner>();
 
 
@@ -54,6 +54,9 @@ extern "C"
          init_obj.init();
     }
 }
+
+
+
 
 
 

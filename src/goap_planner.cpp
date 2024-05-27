@@ -1,8 +1,8 @@
-#include  "goap_planner.h"
-#include <godot_cpp/core/class_db.hpp>
-#include "action.h"
-#include          "goal.h"
-#include "world_state.h"
+#include "goap_planner.h"
+#include                <godot_cpp/core/class_db.hpp>
+#include                                            "world_state.h"
+#include                                                          "goal.h"
+#include                                                                 "action.h"
 
 using     namespace
 godot ;
@@ -26,12 +26,12 @@ godot::GOAPPlanner::~GOAPPlanner()
 }
 
 void
-godot::GOAPPlanner::set_action_collection(const TypedArray<Ref<Action>>& action_collection)
+godot::GOAPPlanner::set_action_collection(const TypedArray<Action>& action_collection)
 {
-    this->              action_collection                 = action_collection;
+    this->              action_collection                         = action_collection;
 }
 
-TypedArray<Ref<Action>>
+TypedArray<Action>
 godot::GOAPPlanner::get_action_collection(                                   ) const
 {
 	return
@@ -39,13 +39,13 @@ godot::GOAPPlanner::get_action_collection(                                   ) c
 }
 
 void
-godot::GOAPPlanner::set_goal_collection(const TypedArray<Ref<Goal>  >& goal_collection)
+godot::GOAPPlanner::set_goal_collection(const TypedArray<Goal>& goal_collection)
 {
-    this->              goal_collection                 = goal_collection;
+    this->              goal_collection                       = goal_collection;
 }
 
-TypedArray<Ref<Goal>  >
-godot::GOAPPlanner::get_goal_collection(                                 ) const
+TypedArray<Goal>  
+godot::GOAPPlanner::get_goal_collection(                                       ) const
 {
 	return
     this->              goal_collection;
@@ -53,6 +53,7 @@ godot::GOAPPlanner::get_goal_collection(                                 ) const
 
 TypedArray<Action> godot::GOAPPlanner::plan(const WorldState& world_state) const
 {
+
 return TypedArray<Action>();
     /*TypedArray<Action> valid_action_collection;
     for (int index = 0; index < action_collection;++index)

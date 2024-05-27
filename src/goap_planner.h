@@ -5,37 +5,37 @@
 #include <windows.h>
 #endif
 
-#include <godot_cpp/classes/node.hpp>
-#include                            <godot_cpp/variant/typed_array.hpp>
-#include                                                              <godot_cpp/variant/variant.hpp>
-
-
+#include <godot_cpp/classes/resource.hpp>
+#include                                <godot_cpp/variant/typed_array.hpp>
+#include                                                                  <godot_cpp/variant/variant.hpp>
 
 namespace godot
-{class Goal;
-class Action;
-class WorldState;
-    class GOAPPlanner : public Node
+{
+    class Goal      ;
+    class     Action;
+    class WorldState;
+
+    class GOAPPlanner : public Resource
     {
 
-  GDCLASS(GOAPPlanner ,        Node)
+  GDCLASS(GOAPPlanner ,        Resource)
 
 protected:
 
-          static void _bind_methods();
-          TypedArray<Ref<Action>> action_collection;
-          TypedArray<Ref<Goal  >>   goal_collection;
+          static     void     _bind_methods ();
+          TypedArray<Action> action_collection;
+          TypedArray<Goal  >   goal_collection;          
 
 public   :
 
           GOAPPlanner();
          ~GOAPPlanner();
 
-                void set_action_collection(const TypedArray<Ref<Action>>& action_collection)      ;
-          TypedArray<Ref<Action>> get_action_collection(                                   ) const;
+                void         set_action_collection(const TypedArray<Action>& action_collection)      ;
+          TypedArray<Action> get_action_collection(                                           ) const;
 
-                void   set_goal_collection(const TypedArray<Ref<Goal  >>&   goal_collection)      ;
-          TypedArray<Ref<Goal  >>   get_goal_collection(                                   ) const;
+                void           set_goal_collection(const TypedArray<Goal  >&   goal_collection)      ;
+          TypedArray<Goal  >   get_goal_collection(                                           ) const;
 
           TypedArray<Action> plan(const WorldState& world_state) const;
 
@@ -43,6 +43,15 @@ public   :
 }
 
 #endif//GOAP_PLANNER_H
+
+
+
+
+
+
+
+
+
 
 
 

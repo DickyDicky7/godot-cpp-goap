@@ -5,16 +5,16 @@
 #include <windows.h>
 #endif
 
-#include <godot_cpp/classes/node.hpp>
+#include <godot_cpp/classes/resource.hpp>
 #include                                <godot_cpp/variant/dictionary.hpp>
 #include                                                                 <godot_cpp/variant/variant.hpp>
 
 namespace godot
 {
-    class Goal : public Node
+    class Goal : public Resource
     {
 
-  GDCLASS(Goal ,        Node)
+  GDCLASS(Goal ,        Resource)
 
 protected:
 
@@ -27,13 +27,23 @@ public   :
           Goal();
          ~Goal();
 
-           void set_priorities(const float& priorities)     ;
-          float get_priorities(                       )const;
+           void set_priorities(const float& priorities)      ;
+          float get_priorities(                       ) const;
 
-                void set_desired_state_collection(const Dictionary& desired_state_collection)     ;
-          Dictionary get_desired_state_collection(                                          )const;
+                void set_desired_state_collection(const Dictionary& desired_state_collection)      ;
+          Dictionary get_desired_state_collection(                                          ) const;
 
     };
 }
 
 #endif//GOAL_H
+
+
+
+
+
+
+
+
+
+

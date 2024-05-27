@@ -1,6 +1,6 @@
 #include "world_state.h"
 #include <godot_cpp/core/class_db.hpp>
-#include "action.h"
+
 using     namespace
 godot ;
 
@@ -10,18 +10,16 @@ godot::WorldState::_bind_methods()
           ClassDB:: bind_method (D_METHOD("get_state_collection"                    ), &WorldState::get_state_collection);
           ClassDB:: bind_method (D_METHOD("set_state_collection", "state_collection"), &WorldState::set_state_collection);
 
-          ClassDB:: bind_method (D_METHOD("get_state", "key"         ), &WorldState::get_state);
-          ClassDB:: bind_method (D_METHOD("set_state", "key", "value"), &WorldState::set_state);
+          //ClassDB:: bind_method (D_METHOD("get_state", "key"         ), &WorldState::get_state);
+          //ClassDB:: bind_method (D_METHOD("set_state", "key", "value"), &WorldState::set_state);
 
-          ClassDB:: bind_method (D_METHOD("is_required_state_collection_met", "required_state_collection"),
-                              &WorldState::is_required_state_collection_met);
+          //ClassDB:: bind_method (D_METHOD("is_required_state_collection_met", "required_state_collection"),
+          //                    &WorldState::is_required_state_collection_met);
 
           ADD_PROPERTY    (
               PropertyInfo(       Variant::DICTIONARY,     "state_collection")
                                                      , "set_state_collection"
                                                      , "get_state_collection");
-
-
 }
 
 godot::WorldState:: WorldState()
@@ -68,11 +66,10 @@ const  Dictionary&    required_state_collection    ) const
      !=                        state_collection.get(keys[index], 0)
         )
         {
-            return 0;
+             return  0;
         }
-            
     }
-return 1;
+             return  1;
 }
 
 
