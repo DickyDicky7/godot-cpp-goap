@@ -37,7 +37,7 @@ public   :
                 void           set_goal_collection(const TypedArray<Goal  >&   goal_collection)      ;
           TypedArray<Goal  >   get_goal_collection(                                           ) const;
 
-          TypedArray<Action> plan(const WorldState& world_state) const;
+          TypedArray<Action> plan(WorldState& world_state) const;
 
     };
 }

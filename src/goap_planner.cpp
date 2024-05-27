@@ -61,7 +61,8 @@ godot::GOAPPlanner::get_goal_collection(                                       )
 }
 
 TypedArray<Action>
-godot::GOAPPlanner::plan(const WorldState& world_state) const
+godot::GOAPPlanner::plan(      WorldState& world_state)
+const
 {
 TypedArray<Action> valid_action_collection       ;
     for (int index = 0;
@@ -79,7 +80,7 @@ TypedArray<Action> valid_action_collection       ;
            }
     }
 
-               Goal*
+         const Goal*
         chosen_goal= nullptr;
     for (int index = 0      ;
              index < goal_collection.size();
@@ -109,7 +110,7 @@ TypedArray<Action>                              plan_action_collection;
     while (!world_state.is_required_state_collection_met(
          chosen_goal  ->get_desired_state_collection ()))
     {
-           Action*    best_action = nullptr;
+     const Action*    best_action = nullptr;
     for (int index = 0;
              index < valid_action_collection.size();
            ++index                                )
