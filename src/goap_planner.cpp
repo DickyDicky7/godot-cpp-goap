@@ -28,7 +28,7 @@ godot::GOAPPlanner::set_action_collection(const TypedArray<Action>& action_colle
     this->              action_collection                 = action_collection;
 }
 
-Dictionary
+TypedArray<Action>
 godot::GOAPPlanner::get_action_collection(                                   ) const
 {
 	return
@@ -41,7 +41,7 @@ godot::GOAPPlanner::set_goal_collection(const TypedArray<Goal  >& goal_collectio
     this->              goal_collection                 = goal_collection;
 }
 
-Dictionary
+TypedArray<Goal  >
 godot::GOAPPlanner::get_goal_collection(                                 ) const
 {
 	return
