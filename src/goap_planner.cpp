@@ -55,7 +55,7 @@ TypedArray<Action> godot::GOAPPlanner::plan(const WorldState& world_state) const
 {
 
 return
-TypedArray<Action>;
+TypedArray<Action>();
     /*TypedArray<Action> valid_action_collection;
     for (int index = 0; index < action_collection;++index)
     {
