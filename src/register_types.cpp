@@ -7,9 +7,9 @@
 #include     "hello.h"
 #include "plan_goal.h"
 #include "plan_action.h"
+#include               "world_state.h"
 #include                      "goal.h"
 #include "action.h"
-#include               "world_state.h"
 #include "goap_planner.h"
 
 using namespace godot;
