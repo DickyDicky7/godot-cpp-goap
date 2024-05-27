@@ -32,6 +32,14 @@ godot::Action::_bind_methods()
                                               , "set_cost"
                                               , "get_cost");
 
+
+      ClassDB:: bind_method (D_METHOD("set_nodes", "nodes"), &Action::set_nodes);
+      ClassDB:: bind_method (D_METHOD("get_nodes"         ), &Action::get_nodes);
+
+ ClassDB::add_property("Action", PropertyInfo(Variant::ARRAY,       "nodes" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_NODE_TYPE) +         ":Node3D")
+                                                                           ,   "set_nodes"
+                                                                           ,   "get_nodes");
+
 }
 
 godot::Action:: Action()

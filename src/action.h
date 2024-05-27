@@ -13,6 +13,7 @@ namespace godot
 {
 
     class WorldState;
+    class Node3D;
 
     class Action : public Resource
     {
@@ -25,6 +26,8 @@ protected:
           Dictionary precondition_collection;
           Dictionary       effect_collection;
           float  cost;
+
+          TypedArray<Node3D> nodes;
 
 public   :
 
@@ -42,6 +45,9 @@ public   :
 
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
+
+void set_nodes(const TypedArray<Node3D>& nodes){this->nodes=nodes};
+TypedArray<Node3D> get_nodes(){return nodes;};
     };
 }
 
