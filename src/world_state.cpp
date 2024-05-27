@@ -21,8 +21,6 @@ godot::WorldState::_bind_methods()
                                                      , "set_state_collection"
                                                      , "get_state_collection");
 
-      ClassDB:: bind_method (D_METHOD("are_precondition_collection_met", "world_state"), &Action::are_precondition_collection_met);
-      ClassDB:: bind_method (D_METHOD(    "apply_effect_collection"    , "world_state"), &Action::    apply_effect_collection    );
 
 }
 
