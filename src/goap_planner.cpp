@@ -133,7 +133,11 @@ TypedArray<Action>                              plan_action_collection;
                 return
 TypedArray<Action>();
 
-           best_action->apply_effect_collection(world_state);
+           Action*
+           best_action_temp =
+           best_action      ;
+
+           best_action_temp->apply_effect_collection(world_state);
            plan_action_collection.append((const Variant&)*best_action);
           valid_action_collection.erase ((const Variant&)*best_action);
 
