@@ -12,7 +12,7 @@
 
 namespace godot
 {
-class WorldState;
+class WorldState{GDCLASS(WorldState,Resource)};
     class Action : public Node
     {
 
