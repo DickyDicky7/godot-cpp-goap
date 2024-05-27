@@ -47,7 +47,7 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-void set_nodes(const TypedArray<Node3D>& nodes){this->nodes=nodes};
+void set_nodes(const TypedArray<Node3D>& nodes){this->nodes=nodes;};
 TypedArray<Node3D> get_nodes(){return nodes;};
     };
 }
