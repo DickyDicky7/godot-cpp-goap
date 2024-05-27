@@ -82,8 +82,6 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
 void
 godot::Action::_bind_methods()
 {
-      ClassDB:: bind_method (D_METHOD("are_precondition_collection_met", "world_state"), &Action::are_precondition_collection_met);
-      ClassDB:: bind_method (D_METHOD(    "apply_effect_collection"    , "world_state"), &Action::    apply_effect_collection    );
 
       ClassDB:: bind_method (D_METHOD("set_precondition_collection", "precondition_collection"), &Action::set_precondition_collection);
       ClassDB:: bind_method (D_METHOD("get_precondition_collection"                           ), &Action::get_precondition_collection);
