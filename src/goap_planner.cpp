@@ -68,7 +68,7 @@ TypedArray<Action> valid_action_collection       ;
              index <     action_collection.size();
            ++index                              )
     {
-           Action action=action_collection[index];
+           Action action=(Action)action_collection[index];
         if (      action.
                are_precondition_collection_met        (
                                            world_state)
@@ -83,7 +83,7 @@ TypedArray<Action> valid_action_collection       ;
              index < goal_collection.size();
 ++index)
 {
-Goal goal = goals[index];
+Goal goal = (Goal)goal_collection[index];
 if (world_state.is_required_state_collection_met(goal.get_desired_state_collection()))
 {
 continue;
@@ -104,7 +104,7 @@ while (!world_state.is_required_state_collection_met(chosen_goal->get_desired_st
 Action* best_action = nullptr;
 for (int index = 0; index < valid_action_collection.size(); ++index)
 {
-Action action = valid_action_collection[index];
+Action action = (Action)valid_action_collection[index];
   if (action.are_precondition_collection_met(world_state))
   {
     if (best_action == nullptr || action.get_cost() < best_action->get_cost())
@@ -118,8 +118,8 @@ if (best_action == nullptr)
   return TypedArray<Action>();
 
 best_action->apply_effect_collection(world_state);
-plan_action_collection.append(*best_action);
-valid_action_collection.erase(*best_action);
+plan_action_collection.append((Resource)*best_action);
+valid_action_collection.erase((Resource)*best_action);
 
 }
 
