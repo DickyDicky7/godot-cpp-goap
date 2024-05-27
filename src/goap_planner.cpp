@@ -14,7 +14,7 @@ ClassDB::bind_method(D_METHOD("set_action_collection", "action_collection"), &GO
 ClassDB::bind_method(D_METHOD("get_action_collection"), &GOAPPlanner::get_action_collection);
 
 
-ADD_PROPERTY(PropertyInfo(Variant::ARRAY, "action_collection"),"set_action_collection","get_action_collection");
+ADD_PROPERTY(PropertyInfo(Variant::ARRAY, "action_collection", PROPERTY_HINT_ARRAY_TYPE),"set_action_collection","get_action_collection");
 }
 #include <godot_cpp/classes/mesh_instance3d.hpp>
 godot::GOAPPlanner:: GOAPPlanner()
