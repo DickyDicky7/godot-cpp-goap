@@ -68,60 +68,82 @@ TypedArray<Action> valid_action_collection       ;
              index <     action_collection.size();
            ++index                              )
     {
-           const Action& action=(const Action&)action_collection[index];
-        if (      action.
+           const Action& action=
+          (const Action&)action_collection[index];
+        if (             action.
                are_precondition_collection_met        (
                                            world_state)
            )
            {
-                   valid_action_collection.append(action);
+                   valid_action_collection.append((const Variant&)action);
            }
     }
 
-    Goal* chosen_goal = nullptr;
-    for (int index = 0;
+               Goal*
+        chosen_goal= nullptr;
+    for (int index = 0      ;
              index < goal_collection.size();
-++index)
-{
-Goal goal = (Goal)goal_collection[index];
-if (world_state.is_required_state_collection_met(goal.get_desired_state_collection()))
-{
-continue;
-}
-if (chosen_goal == nullptr || goal.get_priorities()>chosen_goal->get_priorities())
-{
-chosen_goal = &goal;
-}
-}
+           ++index                        )
+    {
+         const Goal& goal=
+        (const Goal&)goal_collection[index];
+     if (world_state.is_required_state_collection_met(goal.get_desired_state_collection()))
+        {
+            continue;
+        }
+     if (chosen_goal == nullptr
+     ||         goal .get_priorities()
+      >  chosen_goal->get_priorities())
+        {
+         chosen_goal =
+               &goal ;
+        }
+    }
 
 
-if (chosen_goal == nullptr) return TypedArray<Action>();
+    if ( chosen_goal == nullptr)
+         return
+TypedArray<Action>();
 
-TypedArray<Action> plan_action_collection;
-Dictionary current_state_collection = world_state.get_state_collection().duplicate(true);
-while (!world_state.is_required_state_collection_met(chosen_goal->get_desired_state_collection()))
-{
-Action* best_action = nullptr;
-for (int index = 0; index < valid_action_collection.size(); ++index)
-{
-Action action = (Action)valid_action_collection[index];
-  if (action.are_precondition_collection_met(world_state))
-  {
-    if (best_action == nullptr || action.get_cost() < best_action->get_cost())
-      {
-        best_action = &action;
-       }
-  }
-}
+TypedArray<Action>                              plan_action_collection;
+    while (!world_state.is_required_state_collection_met(
+         chosen_goal  ->get_desired_state_collection ()))
+    {
+           Action*    best_action = nullptr;
+    for (int index = 0;
+             index < valid_action_collection.size();
+           ++index                                )
+        {
+     const Action&         action=
+    (const Action&)  valid_action_collection[index];
+           if     (        action.are_precondition_collection_met(world_state))
+           {
+           if (       best_action == nullptr
+           ||              action .get_cost()
+            <         best_action->get_cost()        )
+              {
+                      best_action =
+                          &action ;
+              }
+           }
+        }
 
-if (best_action == nullptr)
-  return TypedArray<Action>();
+        if(best_action == nullptr)
+                return
+TypedArray<Action>();
 
-best_action->apply_effect_collection(world_state);
-plan_action_collection.append((Resource)*best_action);
-valid_action_collection.erase((Resource)*best_action);
+           best_action->apply_effect_collection(world_state);
+           plan_action_collection.append((const Variant&)*best_action);
+          valid_action_collection.erase ((const Variant&)*best_action);
 
-}
+    }
 
     return plan_action_collection;
 }
+
+
+
+
+
+
+
