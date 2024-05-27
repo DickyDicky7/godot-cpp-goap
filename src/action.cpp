@@ -5,34 +5,6 @@
 using     namespace
 godot ;
 
-void
-godot::Action::_bind_methods()
-{
-      ClassDB:: bind_method (D_METHOD("are_precondition_collection_met", "world_state"), &Action::are_precondition_collection_met);
-      ClassDB:: bind_method (D_METHOD(    "apply_effect_collection"    , "world_state"), &Action::    apply_effect_collection    );
-
-      ClassDB:: bind_method (D_METHOD("set_precondition_collection", "precondition_collection"), &Action::set_precondition_collection);
-      ClassDB:: bind_method (D_METHOD("get_precondition_collection"                           ), &Action::get_precondition_collection);
-
-      ClassDB:: bind_method (D_METHOD("set_effect_collection", "effect_collection"), &Action::set_effect_collection);
-      ClassDB:: bind_method (D_METHOD("get_effect_collection"                     ), &Action::get_effect_collection);
-
-      ClassDB:: bind_method (D_METHOD("set_cost", "cost"), &Action::set_cost);
-      ClassDB:: bind_method (D_METHOD("get_cost"        ), &Action::get_cost);
-
-      ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY,     "precondition_collection")
-                                                   , "set_precondition_collection"
-                                                   , "get_precondition_collection");
-
-      ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY,     "effect_collection")
-                                                   , "set_effect_collection"
-                                                   , "get_effect_collection");
-
-      ADD_PROPERTY(PropertyInfo(Variant::FLOAT,     "cost")
-                                              , "set_cost"
-                                              , "get_cost");
-
-}
 
 godot::Action:: Action()
 {
@@ -107,4 +79,32 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
 
 
 
+void
+godot::Action::_bind_methods()
+{
+      ClassDB:: bind_method (D_METHOD("are_precondition_collection_met", "world_state"), &Action::are_precondition_collection_met);
+      ClassDB:: bind_method (D_METHOD(    "apply_effect_collection"    , "world_state"), &Action::    apply_effect_collection    );
+
+      ClassDB:: bind_method (D_METHOD("set_precondition_collection", "precondition_collection"), &Action::set_precondition_collection);
+      ClassDB:: bind_method (D_METHOD("get_precondition_collection"                           ), &Action::get_precondition_collection);
+
+      ClassDB:: bind_method (D_METHOD("set_effect_collection", "effect_collection"), &Action::set_effect_collection);
+      ClassDB:: bind_method (D_METHOD("get_effect_collection"                     ), &Action::get_effect_collection);
+
+      ClassDB:: bind_method (D_METHOD("set_cost", "cost"), &Action::set_cost);
+      ClassDB:: bind_method (D_METHOD("get_cost"        ), &Action::get_cost);
+
+      ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY,     "precondition_collection")
+                                                   , "set_precondition_collection"
+                                                   , "get_precondition_collection");
+
+      ADD_PROPERTY(PropertyInfo(Variant::DICTIONARY,     "effect_collection")
+                                                   , "set_effect_collection"
+                                                   , "get_effect_collection");
+
+      ADD_PROPERTY(PropertyInfo(Variant::FLOAT,     "cost")
+                                              , "set_cost"
+                                              , "get_cost");
+
+}
 
