@@ -28,7 +28,7 @@ public   :
           PlanGoal();
          ~PlanGoal();
 
-          virtual float get_discontentment(float value);
+          virtual float _get_discontentment(float value);
 
           StringName get_name(                      ) const;
                 void set_name(const StringName &name)      ;
@@ -37,7 +37,7 @@ public   :
           void  set_value(const float& value)      ;
 
           float get_change_over_time(                             ) const;
-          void  set_change_over_time(float const& change_over_time)      ;
+          void  set_change_over_time(const float& change_over_time)      ;
 
     };
 }

@@ -13,9 +13,9 @@ PlanGoal::~PlanGoal()
 }
 
 float
-PlanGoal::get_discontentment(float value)
+PlanGoal::_get_discontentment(float value)
 {
-                            return value;
+                             return value;
 }
 
 StringName
@@ -49,7 +49,7 @@ PlanGoal::get_change_over_time(                             ) const
 }
 
 void
-PlanGoal::set_change_over_time(float const& change_over_time)
+PlanGoal::set_change_over_time(const float& change_over_time)
 {
         this->change_over_time            = change_over_time;
 }
@@ -57,7 +57,7 @@ PlanGoal::set_change_over_time(float const& change_over_time)
 void
 PlanGoal::_bind_methods()
 {
-    ClassDB::bind_method(D_METHOD("get_discontentment", "value"), &PlanGoal::get_discontentment);
+    ClassDB::bind_method(D_METHOD("_get_discontentment", "value"), &PlanGoal::_get_discontentment);
 
     ClassDB::bind_method(D_METHOD("set_name", "name"), &PlanGoal::set_name);
     ClassDB::bind_method(D_METHOD("get_name"        ), &PlanGoal::get_name);
