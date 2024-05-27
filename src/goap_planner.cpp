@@ -16,9 +16,9 @@ ClassDB::bind_method(D_METHOD("get_action_collection"), &GOAPPlanner::get_action
 
 ADD_PROPERTY(PropertyInfo(Variant::ARRAY, "action_collection"),"set_action_collection","get_action_collection");
 }
-
+#include <godot_cpp/classes/mesh_instance3d.hpp>
 godot::GOAPPlanner:: GOAPPlanner()
-{
+{MeshInstance3D;
 }
 
 godot::GOAPPlanner::~GOAPPlanner()
@@ -26,35 +26,36 @@ godot::GOAPPlanner::~GOAPPlanner()
 }
 
 void
-godot::GOAPPlanner::set_action_collection(const TypedArray<Action>& action_collection)
+godot::GOAPPlanner::set_action_collection(const TypedArray<Ref<Action>>& action_collection)
 {
-    this->              action_collection                         = action_collection;
+    this->              action_collection                              = action_collection;
 }
 
-TypedArray<Action>
-godot::GOAPPlanner::get_action_collection(                                   ) const
+TypedArray<Ref<Action>>
+godot::GOAPPlanner::get_action_collection(                                                ) const
 {
 	return
     this->              action_collection;
 }
 
 void
-godot::GOAPPlanner::set_goal_collection(const TypedArray<Goal>& goal_collection)
+godot::GOAPPlanner::set_goal_collection(const TypedArray<Ref<Goal>>& goal_collection)
 {
-    this->              goal_collection                       = goal_collection;
+    this->              goal_collection                            = goal_collection;
 }
 
-TypedArray<Goal>  
-godot::GOAPPlanner::get_goal_collection(                                       ) const
+TypedArray<Ref<Goal>>  
+godot::GOAPPlanner::get_goal_collection(                                            ) const
 {
 	return
     this->              goal_collection;
 }
 
-TypedArray<Action> godot::GOAPPlanner::plan(const WorldState& world_state) const
+TypedArray<Ref<Action>> godot::GOAPPlanner::plan(const WorldState& world_state) const
 {
 
-return TypedArray<Action>();
+return
+TypedArray<Ref<Action>>();
     /*TypedArray<Action> valid_action_collection;
     for (int index = 0; index < action_collection;++index)
     {
