@@ -68,7 +68,7 @@ TypedArray<Action> valid_action_collection       ;
              index <     action_collection.size();
            ++index                              )
     {
-           const Action& action=action_collection[index];
+           const Action& action=(const Action&)action_collection[index];
         if (      action.
                are_precondition_collection_met        (
                                            world_state)
