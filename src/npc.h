@@ -13,7 +13,7 @@ namespace godot
 {
 
     class WorldState ;
-    class Action;
+    class      Action;
     class GOAPPlanner;
 
     class NPC : public Node
@@ -23,7 +23,7 @@ namespace godot
 
 protected:
 
-          static void       _bind_methods ();
+          static void _bind_methods();
 
           WorldState  world_state  ;
           GOAPPlanner  goap_planner;
@@ -32,11 +32,18 @@ protected:
 
 public   :
 
-          virtual void _process(double delta) override;
-          virtual void _physics_process(double delta) override;
+          NPC();
+         ~NPC();
 
-           void perform_action(Action action, double delta);
+          //virtual void _process(double delta) override;
+          //virtual void _physics_process(double delta) override;
+
+          // void perform_action(Action action, double delta);
+
+          void set_world_state(const WorldState& world_state);
+          WorldState get_world_state()const;
     };
 }
 
 #endif//NPC_H
+

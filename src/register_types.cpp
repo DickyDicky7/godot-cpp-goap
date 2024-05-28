@@ -4,6 +4,7 @@
 #include                                                     <godot_cpp/core/defs.hpp>
 #include                                                                             <godot_cpp/godot.hpp>
 
+#include       "npc.h"
 #include     "hello.h"
 #include "plan_goal.h"
 #include "plan_action.h"
@@ -29,7 +30,7 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     ClassDB::register_class<Action     >();
     ClassDB::register_class<ActionScript>();
     ClassDB::register_class<GOAPPlanner>();
-
+    ClassDB::register_class<NPC        >();
 
 }
 
