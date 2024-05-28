@@ -27,8 +27,8 @@ protected:
           Dictionary       effect_collection;
           float  cost;
 
-          //Script
-          //script     ;
+          Script
+          script     ;
 
 public   :
 
@@ -47,8 +47,8 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-          //void   set_script(const Script& script)      ;
-          //Script get_script(                    ) const;
+          void   set_script(const Script& script)      ;
+          Script get_script(                    ) const;
     };
 }
 

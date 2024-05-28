@@ -49,9 +49,9 @@ godot::Action::_bind_methods()
 godot::Action:: Action()
 {
     this->cost   = 1.0f      ;
-    Script script= GDScript();
-           script.set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
-    this->        set_script     ((const Variant&)         script                                      );
+    this->script = GDScript();
+    this->script .set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
+       Object::   set_script     ((const Variant&) this -> script                                      );
 }
 
 godot::Action::~Action()
@@ -119,20 +119,26 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
     }
 }
 
-//void
-//godot::Action::set_script( const Script &          script)
-//{
-//    this->         script                        = script ;
-//     Resource::set_script((const Variant&) this -> script);
-//}
-//
-//Script
-//godot::Action::get_script(                    )
-//const
-//{
-//	return
-//    this->         script;
-//}
+void
+godot::Action::set_script( const Script &          script)
+{
+    this->         script                        = script ;
+       Object::set_script((const Variant&) this -> script);
+}
+
+Script
+godot::Action::get_script(                               )
+const
+{
+	return
+    this->         script;
+}
+
+
+
+
+
+
 
 
 
