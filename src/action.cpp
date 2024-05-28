@@ -126,8 +126,6 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
 void
 godot::Action::set_custom_script(const Variant& custom_script)
 {
-godot::_err_print_error("set_custom_script", "action.cpp", 127, "no error", true, true);
-Object::set_script(custom_script);
     this->         custom_script              = custom_script;
 }
 

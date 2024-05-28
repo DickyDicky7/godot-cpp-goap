@@ -29,7 +29,7 @@ public   :
 
           ActionScript()
           {
-       this->set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
+       this->set_source_code("extends Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
           }
          ~ActionScript()
           {
