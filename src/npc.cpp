@@ -8,23 +8,28 @@ void
 godot::NPC::_bind_methods()
 {
 
-   ClassDB::bind_method(D_METHOD("set_world_state", "world_state"), &NPC::set_world_state);
-   ClassDB::bind_method(D_METHOD("get_world_state"), &NPC::get_world_state);
+   ClassDB:: bind_method (D_METHOD("set_world_state", "world_state"), &NPC::set_world_state);
+   ClassDB:: bind_method (D_METHOD("get_world_state"               ), &NPC::get_world_state);
 
-ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "world_state", PROPERTY_HINT_RESOURCE_TYPE,
-"WorldState"), "set_world_state","get_world_state");
+   ADD_PROPERTY(PropertyInfo(Variant::OBJECT,     "world_state" , PROPERTY_HINT_RESOURCE_TYPE, "WorldState")
+                                            , "set_world_state"
+                                            , "get_world_state");
 
-//ClassDB::bind_method(D_METHOD("set_action_queue", "action_queue"), &NPC::set_action_queue);
-//ClassDB::bind_method(D_METHOD("get_action_queue"), &NPC::get_action_queue);
-//
-//
-//           ADD_PROPERTY(PropertyInfo(Variant::ARRAY,       "action_queue" , PROPERTY_HINT_ARRAY_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
-//                                                   ,       "Action"           ))
-//                                                   ,   "set_action_queue"
-//                                                   ,   "get_action_queue");
+   //ClassDB:: bind_method (D_METHOD("set_action_queue", "action_queue"), &NPC::set_action_queue);
+   //ClassDB:: bind_method (D_METHOD("get_action_queue"                ), &NPC::get_action_queue);
+   //
+   //
+   //ADD_PROPERTY(PropertyInfo(Variant::ARRAY,     "action_queue" , PROPERTY_HINT_ARRAY_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
+   //                                        ,     "Action"      ))
+   //                                        , "set_action_queue"
+   //                                        , "get_action_queue");
 
+   ClassDB:: bind_method (D_METHOD("set_goap_planner", "goap_planner"), &NPC::set_goap_planner);
+   ClassDB:: bind_method (D_METHOD("get_goap_planner"                ), &NPC::get_goap_planner);
 
-
+   ADD_PROPERTY(PropertyInfo(Variant::OBJECT,     "goal_planner" , PROPERTY_HINT_RESOURCE_TYPE, "GOAPPlanner")
+                                            , "set_goap_planner"
+                                            , "get_goap_planner");
 }
 
 godot::NPC:: NPC()
@@ -38,21 +43,21 @@ godot::NPC::~NPC()
 void
 godot::NPC::        _process(double delta)
 {
-    //World
-    if (current_action == nullptr || !(current_action->are_precondition_collection_met(world_state.ptr())))
+    if  (current_action == nullptr
+    || !(current_action -> are_precondition_collection_met(world_state.ptr())))
     {
-        action_queue = goap_planner.ptr()->plan(world_state.ptr());
-		{
-			if (action_queue.size() > 0)
-			{
-auto action = action_queue.pop_front();
-				this->current_action = (Action*)(&action);
-			}
-		}
+        action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
+    if (action_queue . size            () > 0 )
+        {
+            auto action =  action_queue.pop_front();
+   this->current_action =( Action*)
+                         (&action );
+        }
     }
     else
     {
-this->call(this->current_action->get_NPC_method_name());
+        this->call                                 (
+        this->current_action->get_NPC_method_name());
     }
 }
 
@@ -62,31 +67,44 @@ godot::NPC::_physics_process(double delta)
 
 }
 
-void godot::NPC::set_world_state(const Ref<WorldState>& world_state)
-{this->world_state=world_state;
-}
-
-Ref<WorldState> godot::NPC::get_world_state() const
+void
+godot::NPC::set_world_state(const Ref<WorldState>& world_state)
 {
-	return this->world_state;
+    this->      world_state                      = world_state;
 }
 
-void godot::NPC::set_goap_planner(const Ref<GOAPPlanner>& goap_planner)
+Ref<WorldState>
+godot::NPC::get_world_state(                                  )
+const
 {
+    return
+    this->      world_state;
 }
 
-Ref<GOAPPlanner> godot::NPC::get_goap_planner() const
+void
+godot::NPC::set_goap_planner(const Ref<GOAPPlanner>& goap_planner)
 {
-	return Ref<GOAPPlanner>();
+    this->      goap_planner                       = goap_planner;
 }
 
-//void godot::NPC::set_action_queue(const TypedArray<Ref<Action>>& action_queue)
+Ref<GOAPPlanner>
+godot::NPC::get_goap_planner(                                    )
+const
+{
+    return
+    this->      goap_planner;
+}
+
+//void
+//godot::NPC::set_action_queue(const TypedArray<Ref<Action>>& action_queue)
 //{
-//this->action_queue=action_queue;
+//    this->      action_queue                              = action_queue;
 //}
 //
-//TypedArray<Ref<Action>> godot::NPC::get_action_queue() const
+//TypedArray<Ref<Action>>
+//godot::NPC::get_action_queue(                                           ) const
 //{
-//	return this->action_queue;
+//    return
+//    this->      action_queue;
 //}
 
