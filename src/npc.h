@@ -31,7 +31,7 @@ protected:
           Ref<WorldState>  world_state  ;
           //GOAPPlanner  goap_planner;
           //Action current_action;
-          //TypedArray<Action> action_queue;
+          TypedArray<Ref<Action>> action_queue;
 
 public   :
 
@@ -45,6 +45,9 @@ public   :
 
           void set_world_state(const Ref<WorldState>& world_state);
           Ref<WorldState> get_world_state()const;
+
+void set_action_queue(const TypedArray<Ref<Action>>& action_queue);
+TypedArray<Ref<Action>> get_action_queue()const;
     };
 }
 
