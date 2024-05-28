@@ -19,6 +19,10 @@ namespace godot
 
   GDCLASS(ActionScript ,        GDScript)
 
+protected:
+
+          static void       _bind_methods ();
+
 public   :
 
           ActionScript()
