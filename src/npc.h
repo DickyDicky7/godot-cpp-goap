@@ -8,11 +8,14 @@
 #include <godot_cpp/classes/node.hpp>
 #include                            <godot_cpp/variant/dictionary.hpp>
 #include                                                             <godot_cpp/variant/variant.hpp>
+#include                             "world_state.h"
+#include                                           "action.h"
+#include                                                    "goap_planner.h"
 
 namespace godot
 {
 
-    class WorldState ;
+    //class WorldState ;
     //class      Action;
     //class GOAPPlanner;
 

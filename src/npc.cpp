@@ -1,8 +1,5 @@
 #include "npc.h"
 #include <godot_cpp/core/class_db.hpp>
-#include                             "world_state.h"
-#include                                           "action.h"
-#include                                                    "goap_planner.h"
 
 using     namespace
 godot ;
