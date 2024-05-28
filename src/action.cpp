@@ -40,10 +40,10 @@ godot::Action::_bind_methods()
       //                                                            , "set_script"
       //                                                            , "get_script");
 
-      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,       "custom_script" , PROPERTY_HINT_RESOURCE_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_FILE
-                                               , "Script"))
+      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,       "custom_script" , PROPERTY_HINT_NONE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
+                                               , "GDScript"))
                                                ,   "set_custom_script"
-                                               ,   "get_custom_script");PROPERTY_HINT
+                                               ,   "get_custom_script");
 }
 
 godot::Action:: Action()
