@@ -48,8 +48,8 @@ godot::Action::_bind_methods()
 
 godot::Action:: Action()
 {
-    this->cost          = 1.0f      ;
-    this->custom_script = GDScript();
+    this->cost          =               1.0f      ;
+    this->custom_script =      (Variant)GDScript();
     (           (Script)
     this->custom_script).set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
        Object::          set_script     ((const Variant&) this -> custom_script                               );
@@ -127,14 +127,13 @@ godot::Action::set_custom_script( const Variant&  custom_script)
        Object::set_script       ((const Variant&) custom_script);
 }
 
-Script
+Variant
 godot::Action::get_custom_script(                              )
 const
 {
 	return
     this->         custom_script;
 }
-
 
 
 

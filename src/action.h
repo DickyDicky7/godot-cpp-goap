@@ -27,10 +27,10 @@ protected:
           Dictionary       effect_collection;
           float  cost  ;
 
+public   :
+
           Variant
           custom_script;
-
-public   :
 
           Action();
          ~Action();
