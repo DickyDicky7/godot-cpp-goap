@@ -25,10 +25,10 @@ protected:
           static void       _bind_methods ();
           Dictionary precondition_collection;
           Dictionary       effect_collection;
-          float  cost;
+          float  cost  ;
 
-          Script
-          script     ;
+          Variant
+          custom_script;
 
 public   :
 
@@ -47,8 +47,8 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-          void   set_script(const Script& script)      ;
-          Script get_script(                    ) const;
+          void    set_custom_script(const Variant& custom_script)      ;
+          Variant get_custom_script(                            ) const;
     };
 }
 
