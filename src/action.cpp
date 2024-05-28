@@ -33,8 +33,8 @@ godot::Action::_bind_methods()
                                               , "get_cost");
 
 
-      ClassDB:: bind_method (D_METHOD("set_script", "script"), &Action::set_script);
-      ClassDB:: bind_method (D_METHOD("get_script"          ), &Action::get_script);
+      //ClassDB:: bind_method (D_METHOD("set_script", "script"), &RefCounted::set_script);
+      //ClassDB:: bind_method (D_METHOD("get_script"          ), &RefCounted::get_script);
 
       //ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_RESOURCE_TYPE, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript")
       //                                                            , "set_script"
@@ -49,8 +49,8 @@ godot::Action::_bind_methods()
 godot::Action:: Action()
 {
     this->cost   = 1.00f                             ;
-    this->script = (Resource)((Script)ActionScript());
-       Object::set_script((const Variant&)this->script);
+    //this->script = (Resource)((Script)ActionScript());
+    //   Object::set_script((const Variant&)this->script);
 }
 
 godot::Action::~Action()
@@ -118,20 +118,20 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
     }
 }
 
-void
-godot::Action::set_script( const Resource& script)
-{
-    this->         script                = script ;
-       Object::set_script((const Variant &)script);
-}
-
-Resource
-godot::Action::get_script(                       )
-const
-{
-	return
-    this->         script;
-}
+//void
+//godot::Action::set_script( const Resource& script)
+//{
+//    this->         script                = script ;
+//       Object::set_script((const Variant &)script);
+//}
+//
+//Resource
+//godot::Action::get_script(                       )
+//const
+//{
+//	return
+//    this->         script;
+//}
 
 
 

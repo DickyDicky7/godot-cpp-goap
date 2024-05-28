@@ -51,8 +51,8 @@ protected:
 
 public   :
 
-          Resource
-          script  ;
+          //Object
+          //script  ;
 
           Action();
          ~Action();
@@ -69,8 +69,8 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-          void     set_script(const Resource& script)      ;
-          Resource get_script(                      ) const;
+          //void   set_script(const Object& script)      ;
+          //Object get_script(                    ) const;
     };
 
 }
