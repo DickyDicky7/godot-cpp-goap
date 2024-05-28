@@ -53,8 +53,8 @@ protected:
 
 public   :
 
-          //Variant
-          //custom_script;
+          Variant
+          custom_script;
 
           Action();
          ~Action();
@@ -71,8 +71,8 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-          //void    set_custom_script(const Variant& custom_script)      ;
-          //Variant get_custom_script(                            ) const;
+          void    set_custom_script(const Variant& custom_script)      ;
+          Variant get_custom_script(                            ) const;
 
           void       set_NPC_method_name(const StringName& NPC_method_name)      ;
           StringName get_NPC_method_name(                                 ) const;

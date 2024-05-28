@@ -11,7 +11,7 @@ ClassDB::bind_method(D_METHOD("set_world_state", "world_state"), &NPC::set_world
 ClassDB::bind_method(D_METHOD("get_world_state"), &NPC::get_world_state);
 
 ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "world_state", PROPERTY_HINT_RESOURCE_TYPE,
-vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE, "WorldState")), "set_world_state","get_world_state");
+"WorldState"), "set_world_state","get_world_state");
 }
 
 godot::NPC:: NPC()

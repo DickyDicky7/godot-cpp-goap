@@ -33,17 +33,17 @@ godot::Action::_bind_methods()
                                               , "get_cost");
 
 
-      //ClassDB:: bind_method (D_METHOD("set_custom_script", "custom_script"), &Action::set_custom_script);
-      //ClassDB:: bind_method (D_METHOD("get_custom_script"                 ), &Action::get_custom_script);
+      ClassDB:: bind_method (D_METHOD("set_custom_script", "custom_script"), &Action::set_custom_script);
+      ClassDB:: bind_method (D_METHOD("get_custom_script"                 ), &Action::get_custom_script);
 
       //ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_RESOURCE_TYPE, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript")
       //                                                            , "set_script"
       //                                                            , "get_script");
 
-      //ADD_PROPERTY(PropertyInfo(Variant::OBJECT,     "custom_script" , PROPERTY_HINT_NONE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
-      //                                         ,          "GDScript"))
-      //                                         , "set_custom_script"
-      //                                         , "get_custom_script");
+      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,     "custom_script" , PROPERTY_HINT_RESOURCE_TYPE
+                                               ,                   "ActionScript")
+                                               , "set_custom_script"
+                                               , "get_custom_script"             );
 
       ClassDB:: bind_method (D_METHOD("set_NPC_method_name", "NPC_method_name"), &Action::set_NPC_method_name);
       ClassDB:: bind_method (D_METHOD("get_NPC_method_name"                   ), &Action::get_NPC_method_name);
@@ -123,19 +123,19 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
     }
 }
 
-//void
-//godot::Action::set_custom_script(const Variant& custom_script)
-//{
-//    this->         custom_script              = custom_script;
-//}
-//
-//Variant
-//godot::Action::get_custom_script(                            )
-//const
-//{
-//	return
-//    this->         custom_script;
-//}
+void
+godot::Action::set_custom_script(const Variant& custom_script)
+{
+    this->         custom_script              = custom_script;
+}
+
+Variant
+godot::Action::get_custom_script(                            )
+const
+{
+	return
+    this->         custom_script;
+}
 
 void
 godot::Action::set_NPC_method_name(const StringName& NPC_method_name)
