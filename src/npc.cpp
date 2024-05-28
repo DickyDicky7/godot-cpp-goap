@@ -22,11 +22,11 @@ godot::NPC::~NPC()
 {
 }
 
-void godot::NPC::set_world_state(const WorldState& world_state)
+void godot::NPC::set_world_state(const Ref<WorldState>& world_state)
 {this->world_state=world_state;
 }
 
-WorldState godot::NPC::get_world_state() const
+Ref<WorldState> godot::NPC::get_world_state() const
 {
 	return this->world_state;
 }

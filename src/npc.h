@@ -28,7 +28,7 @@ protected:
 
           static void _bind_methods();
 
-          WorldState  world_state  ;
+          Ref<WorldState>  world_state  ;
           //GOAPPlanner  goap_planner;
           //Action current_action;
           //TypedArray<Action> action_queue;
@@ -43,8 +43,8 @@ public   :
 
           // void perform_action(Action action, double delta);
 
-          void set_world_state(const WorldState& world_state);
-          WorldState get_world_state()const;
+          void set_world_state(const Ref<WorldState>& world_state);
+          Ref<WorldState> get_world_state()const;
     };
 }
 
