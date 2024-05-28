@@ -33,22 +33,26 @@ godot::Action::_bind_methods()
                                               , "get_cost");
 
 
-      ClassDB:: bind_method (D_METHOD("set_nodes", "nodes"), &Action::set_nodes);
-      ClassDB:: bind_method (D_METHOD("get_nodes"         ), &Action::get_nodes);
+      ClassDB:: bind_method (D_METHOD("set_script", "script"), &Action::set_script);
+      ClassDB:: bind_method (D_METHOD("get_script"          ), &Action::get_script);
 
- ClassDB::add_property("Action", PropertyInfo(Variant::ARRAY,       "nodes" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_NODE_TYPE) +         ":Node3D")
-                                                                           ,   "set_nodes"
-                                                                           ,   "get_nodes");
+      ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript");
+                                                                  , "set_script"
+                                                                  , "get_script");
 
 }
 
 godot::Action:: Action()
 {
-    this->cost = 1.0f;
+    this->cost   = 1.0f      ;
+    Script script= GDScript();
+           script.set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
+    this->        set_script     ((const Variant&) this -> script                                      );
 }
 
 godot::Action::~Action()
 {
+
 }
 
 void
@@ -110,6 +114,23 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
         world_state.set_state ( keys[index], effect_collection[keys[index]]);
     }
 }
+
+//void
+//godot::Action::set_script( const Script &          script)
+//{
+//    this->         script                        = script ;
+//     Resource::set_script((const Variant&) this -> script);
+//}
+//
+//Script
+//godot::Action::get_script(                    )
+//const
+//{
+//	return
+//    this->         script;
+//}
+
+
 
 
 

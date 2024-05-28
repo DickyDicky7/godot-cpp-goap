@@ -8,18 +8,17 @@
 #include <godot_cpp/classes/resource.hpp>
 #include                                <godot_cpp/variant/dictionary.hpp>
 #include                                                                 <godot_cpp/variant/variant.hpp>
-#include <godot_cpp/classes/node3d.hpp>
-//#include <godot_cpp/classes/node>
+#include                                                                                               <godot_cpp/classes/gd_script.hpp>
+
 namespace godot
 {
 
     class WorldState;
-    //class Node3D;
 
     class Action : public Resource
     {
 
-  GDCLASS(Action ,        Resource);
+  GDCLASS(Action ,        Resource)
 
 protected:
 
@@ -28,7 +27,8 @@ protected:
           Dictionary       effect_collection;
           float  cost;
 
-          TypedArray<Node3D> nodes;
+          //Script
+          //script     ;
 
 public   :
 
@@ -47,12 +47,15 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-void set_nodes(const TypedArray<Node3D>& nodes){this->nodes=nodes;};
-TypedArray<Node3D> get_nodes(){return nodes;};
+          //void   set_script(const Script& script)      ;
+          //Script get_script(                    ) const;
     };
 }
 
 #endif//ACTION_H
+
+
+
 
 
 
