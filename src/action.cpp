@@ -36,10 +36,14 @@ godot::Action::_bind_methods()
       ClassDB:: bind_method (D_METHOD("set_script", "script"), &Action::set_script);
       ClassDB:: bind_method (D_METHOD("get_script"          ), &Action::get_script);
 
-      ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_RESOURCE_TYPE, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript")
-                                                                  , "set_script"
-                                                                  , "get_script");
+      //ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_RESOURCE_TYPE, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript")
+      //                                                            , "set_script"
+      //                                                            , "get_script");
 
+      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_RESOURCE_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
+                                               ,   "GDScript"))
+                                               , "set_script"
+                                               , "get_script");
 }
 
 godot::Action:: Action()

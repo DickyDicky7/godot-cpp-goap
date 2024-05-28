@@ -13,17 +13,26 @@ godot::GOAPPlanner::_bind_methods()
            ClassDB:: bind_method (D_METHOD("set_action_collection", "action_collection"), &GOAPPlanner::set_action_collection);
            ClassDB:: bind_method (D_METHOD("get_action_collection"                     ), &GOAPPlanner::get_action_collection);
 
-           ClassDB::add_property("GOAPPlanner", PropertyInfo(Variant::ARRAY,     "action_collection" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":Action"      )
-                                                                           , "set_action_collection"
-                                                                           , "get_action_collection");
+           //ClassDB::add_property("GOAPPlanner", PropertyInfo(Variant::ARRAY,     "action_collection" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":Action"      )
+           //                                                                , "set_action_collection"
+           //                                                                , "get_action_collection");
 
            ClassDB:: bind_method (D_METHOD("set_goal_collection", "goal_collection"), &GOAPPlanner::set_goal_collection);
            ClassDB:: bind_method (D_METHOD("get_goal_collection"                   ), &GOAPPlanner::get_goal_collection);
 
-           ClassDB::add_property("GOAPPlanner", PropertyInfo(Variant::ARRAY,       "goal_collection" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) +         ":Goal")
-                                                                           ,   "set_goal_collection"
-                                                                           ,   "get_goal_collection");
+           //ClassDB::add_property("GOAPPlanner", PropertyInfo(Variant::ARRAY,       "goal_collection" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) +         ":Goal")
+           //                                                                ,   "set_goal_collection"
+           //                                                                ,   "get_goal_collection");
 
+           ADD_PROPERTY(PropertyInfo(Variant::ARRAY,     "action_collection" , PROPERTY_HINT_ARRAY_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
+                                                   ,     "Action"           ))
+                                                   , "set_action_collection"
+                                                   , "get_action_collection");
+
+           ADD_PROPERTY(PropertyInfo(Variant::ARRAY,       "goal_collection" , PROPERTY_HINT_ARRAY_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
+                                                   ,       "Goal"           ))
+                                                   ,   "set_goal_collection"
+                                                   ,   "get_goal_collection");
 }
 
 godot::GOAPPlanner:: GOAPPlanner()
@@ -145,6 +154,12 @@ TypedArray<Action>();
 
     return plan_action_collection;
 }
+
+
+
+
+
+
 
 
 
