@@ -40,7 +40,7 @@ godot::Action::_bind_methods()
       //                                                            , "set_script"
       //                                                            , "get_script");
 
-      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,       "custom_script" , PROPERTY_HINT_RESOURCE_TYPE, vformat("%s/%s:%s", Variant::,s PROPERTY_HINT_RESOURCE_TYPE
+      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,       "custom_script" , PROPERTY_HINT_RESOURCE_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
                                                , "Script"))
                                                ,   "set_custom_script"
                                                ,   "get_custom_script");
