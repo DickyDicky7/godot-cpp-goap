@@ -47,12 +47,12 @@ protected:
           static void       _bind_methods ();
           Dictionary precondition_collection;
           Dictionary       effect_collection;
-          float  cost  ;
+          float  cost;
 
 public   :
 
-          ActionScript
-                script;
+          Resource
+          script  ;
 
           Action();
          ~Action();
@@ -69,8 +69,8 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-          //void    set_custom_script(const Variant& custom_script)      ;
-          //Variant get_custom_script(                            ) const;
+          void     set_script(const Resource& script)      ;
+          Resource get_script(                      ) const;
     };
 
 }

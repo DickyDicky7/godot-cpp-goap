@@ -48,9 +48,9 @@ godot::Action::_bind_methods()
 
 godot::Action:: Action()
 {
-    this->cost  = 1.0f ;
-       Object::set_script(
-                         (const Variant&)this->script);
+    this->cost   = 1.00f                             ;
+    this->script = (Resource)((Script)ActionScript());
+       Object::set_script((const Variant&)this->script);
 }
 
 godot::Action::~Action()
@@ -118,20 +118,20 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
     }
 }
 
-//void
-//godot::Action::set_custom_script( const Variant&  custom_script)
-//{
-//    this->         custom_script               =  custom_script ;
-//       Object::set_script       ((const Variant&) custom_script);
-//}
-//
-//Variant
-//godot::Action::get_custom_script(                              )
-//const
-//{
-//	return
-//    this->         custom_script;
-//}
+void
+godot::Action::set_script( const Resource& script)
+{
+    this->         script                = script ;
+       Object::set_script((const Variant &)script);
+}
+
+Resource
+godot::Action::get_script(                       )
+const
+{
+	return
+    this->         script;
+}
 
 
 
