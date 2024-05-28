@@ -13,8 +13,23 @@
 namespace godot
 {
 
-    class   WorldState;
-    class ActionScript;
+    class  WorldState  ;
+    class ActionScript : public GDScript
+    {
+
+  GDCLASS(ActionScript ,        GDScript)
+
+public   :
+
+          ActionScript()
+          {
+       this->set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
+          }
+         ~ActionScript()
+          {
+          }
+
+    };
 
     class Action : public Resource
     {
@@ -52,25 +67,10 @@ public   :
           //Variant get_custom_script(                            ) const;
     };
 
-    class ActionScript : public GDScript
-    {
-
-  GDCLASS(ActionScript ,        GDScript)
-
-public   :
-
-          ActionScript()
-          {
-       this->set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
-          }
-         ~ActionScript()
-          {
-          }
-
-    };
 }
 
 #endif//ACTION_H
+
 
 
 
