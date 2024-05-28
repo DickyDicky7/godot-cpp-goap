@@ -26,6 +26,6 @@ void godot::NPC::set_world_state(const WorldState& world_state)
 
 WorldState godot::NPC::get_world_state() const
 {
-	return this.world_state;
+	return this->world_state;
 }
 

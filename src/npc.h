@@ -13,8 +13,8 @@ namespace godot
 {
 
     class WorldState ;
-    class      Action;
-    class GOAPPlanner;
+    //class      Action;
+    //class GOAPPlanner;
 
     class NPC : public Node
     {
@@ -26,9 +26,9 @@ protected:
           static void _bind_methods();
 
           WorldState  world_state  ;
-          GOAPPlanner  goap_planner;
-          Action current_action;
-          TypedArray<Action> action_queue;
+          //GOAPPlanner  goap_planner;
+          //Action current_action;
+          //TypedArray<Action> action_queue;
 
 public   :
 
