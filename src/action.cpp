@@ -36,7 +36,7 @@ godot::Action::_bind_methods()
       ClassDB:: bind_method (D_METHOD("set_script", "script"), &Action::set_script);
       ClassDB:: bind_method (D_METHOD("get_script"          ), &Action::get_script);
 
-      ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_TYPE_STRING, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript");
+      ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_RESOURCE_TYPE, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript")
                                                                   , "set_script"
                                                                   , "get_script");
 
@@ -47,7 +47,7 @@ godot::Action:: Action()
     this->cost   = 1.0f      ;
     Script script= GDScript();
            script.set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
-    this->        set_script     ((const Variant&) this -> script                                      );
+    this->        set_script     ((const Variant&)         script                                      );
 }
 
 godot::Action::~Action()
