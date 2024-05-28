@@ -65,11 +65,11 @@ public   :
                 void       set_effect_collection(const Dictionary&       effect_collection)      ;
           Dictionary       get_effect_collection(                                         ) const;
 
-           void set_cost(const float& cost)         ;
-          float get_cost(                 )    const;
+           void set_cost(const float& cost)      ;
+          float get_cost(                 ) const;
 
-          bool are_precondition_collection_met(const WorldState& world_state) const;
-          void     apply_effect_collection    (      WorldState& world_state)      ;
+          bool are_precondition_collection_met(WorldState* world_state) const;
+          void     apply_effect_collection    (WorldState* world_state)      ;
 
           void    set_custom_script(const Variant& custom_script)      ;
           Variant get_custom_script(                            ) const;

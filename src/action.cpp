@@ -106,20 +106,20 @@ const
 }
 
 bool
-godot::Action::are_precondition_collection_met(const WorldState& world_state)
+godot::Action::are_precondition_collection_met(WorldState* world_state)
 const
 {
-    return                                                       world_state.is_required_state_collection_met
+    return                                                 world_state->is_required_state_collection_met
                   (precondition_collection);
 }
 
 void
-godot::Action::    apply_effect_collection    (      WorldState& world_state)
+godot::Action::    apply_effect_collection    (WorldState* world_state)
 {
              Array              keys = this->effect_collection.keys(       );
     for (int index = 0; index < keys.size(); ++index)
     {
-        world_state.set_state ( keys[index], effect_collection[keys[index]]);
+       world_state->set_state ( keys[index], effect_collection[keys[index]]);
     }
 }
 

@@ -7,8 +7,9 @@ godot ;
 void
 godot::NPC::_bind_methods()
 {
-ClassDB::bind_method(D_METHOD("set_world_state", "world_state"), &NPC::set_world_state);
-ClassDB::bind_method(D_METHOD("get_world_state"), &NPC::get_world_state);
+
+   ClassDB::bind_method(D_METHOD("set_world_state", "world_state"), &NPC::set_world_state);
+   ClassDB::bind_method(D_METHOD("get_world_state"), &NPC::get_world_state);
 
 ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "world_state", PROPERTY_HINT_RESOURCE_TYPE,
 "WorldState"), "set_world_state","get_world_state");
@@ -22,6 +23,8 @@ ADD_PROPERTY(PropertyInfo(Variant::OBJECT, "world_state", PROPERTY_HINT_RESOURCE
 //                                                   ,   "set_action_queue"
 //                                                   ,   "get_action_queue");
 
+
+
 }
 
 godot::NPC:: NPC()
@@ -32,6 +35,28 @@ godot::NPC::~NPC()
 {
 }
 
+void
+godot::NPC::        _process(double delta)
+{
+    //World
+    if (current_action == nullptr || !(current_action->are_precondition_collection_met(world_state.ptr())))
+    {
+        action_queue = goap_planner.ptr()->plan(world_state.ptr());
+        if (action_queue.size()>0)
+           this->current_action = &action_queue.pop_front();
+    }
+    else
+    {
+this->call(this->current_action->get_NPC_method_name());
+    }
+}
+
+void
+godot::NPC::_physics_process(double delta)
+{
+
+}
+
 void godot::NPC::set_world_state(const Ref<WorldState>& world_state)
 {this->world_state=world_state;
 }
@@ -39,6 +64,15 @@ void godot::NPC::set_world_state(const Ref<WorldState>& world_state)
 Ref<WorldState> godot::NPC::get_world_state() const
 {
 	return this->world_state;
+}
+
+void godot::NPC::set_goap_planner(const Ref<GOAPPlanner>& goap_planner)
+{
+}
+
+Ref<GOAPPlanner> godot::NPC::get_goap_planner() const
+{
+	return Ref<GOAPPlanner>();
 }
 
 //void godot::NPC::set_action_queue(const TypedArray<Ref<Action>>& action_queue)
