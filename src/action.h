@@ -13,7 +13,8 @@
 namespace godot
 {
 
-    class WorldState;
+    class   WorldState;
+    class ActionScript;
 
     class Action : public Resource
     {
@@ -29,8 +30,8 @@ protected:
 
 public   :
 
-          Variant
-          custom_script;
+          ActionScript
+                script;
 
           Action();
          ~Action();
@@ -47,12 +48,31 @@ public   :
           bool are_precondition_collection_met(const WorldState& world_state) const;
           void     apply_effect_collection    (      WorldState& world_state)      ;
 
-          void    set_custom_script(const Variant& custom_script)      ;
-          Variant get_custom_script(                            ) const;
+          //void    set_custom_script(const Variant& custom_script)      ;
+          //Variant get_custom_script(                            ) const;
+    };
+
+    class ActionScript : public GDScript
+    {
+
+  GDCLASS(ActionScript ,        GDScript)
+
+public   :
+
+          ActionScript()
+          {
+       this->set_source_code("extend Action;\nfunc on_action_performed_by_npc() -> void:\n\tpass;");
+          }
+         ~ActionScript()
+          {
+          }
+
     };
 }
 
 #endif//ACTION_H
+
+
 
 
 

@@ -27,6 +27,7 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     ClassDB::register_class<WorldState >();
     ClassDB::register_class<      Goal >();
     ClassDB::register_class<Action     >();
+    ClassDB::register_class<ActionScript>();
     ClassDB::register_class<GOAPPlanner>();
 
 
@@ -54,6 +55,15 @@ extern "C"
          init_obj.init();
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 
