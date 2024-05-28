@@ -43,7 +43,7 @@ godot::NPC::        _process(double delta)
     {
         action_queue = goap_planner.ptr()->plan(world_state.ptr());
         if (action_queue.size()>0)
-           this->current_action = &(action_queue.pop_front());
+           this->current_action = (Action*)(&(action_queue.pop_front()));
     }
     else
     {
