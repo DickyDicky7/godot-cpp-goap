@@ -42,8 +42,13 @@ godot::NPC::        _process(double delta)
     if (current_action == nullptr || !(current_action->are_precondition_collection_met(world_state.ptr())))
     {
         action_queue = goap_planner.ptr()->plan(world_state.ptr());
-        if (action_queue.size()>0)
-           this->current_action = (Action*)(&(action_queue.pop_front()));
+		{
+			if (action_queue.size() > 0)
+			{
+auto action = action_queue.pop_front();
+				this->current_action = (Action*)(&action);
+			}
+		}
     }
     else
     {
