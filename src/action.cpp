@@ -33,17 +33,17 @@ godot::Action::_bind_methods()
                                               , "get_cost");
 
 
-      //ClassDB:: bind_method (D_METHOD("set_script", "script"), &RefCounted::set_script);
-      //ClassDB:: bind_method (D_METHOD("get_script"          ), &RefCounted::get_script);
+      ClassDB:: bind_method (D_METHOD("set_custom_script", "custom_script"), &Action::set_custom_script);
+      ClassDB:: bind_method (D_METHOD("get_custom_script"          ), &Action::get_custom_script);
 
       //ClassDB::add_property("Action", PropertyInfo(Variant::OBJECT,     "script" , PROPERTY_HINT_RESOURCE_TYPE, String::num(Variant::OBJECT) + "/" + String::num(PROPERTY_HINT_RESOURCE_TYPE) + ":GDScript")
       //                                                            , "set_script"
       //                                                            , "get_script");
 
-      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,       "script" , PROPERTY_HINT_RESOURCE_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
+      ADD_PROPERTY(PropertyInfo(Variant::OBJECT,       "custom_script" , PROPERTY_HINT_RESOURCE_TYPE, vformat("%s/%s:%s", Variant::OBJECT, PROPERTY_HINT_RESOURCE_TYPE
                                                , "ActionScript"))
-                                               ,   "set_script"
-                                               ,   "get_script");
+                                               ,   "set_custom_script"
+                                               ,   "get_custom_script");
 }
 
 godot::Action:: Action()
@@ -118,20 +118,19 @@ godot::Action::    apply_effect_collection    (      WorldState& world_state)
     }
 }
 
-//void
-//godot::Action::set_script( const Resource& script)
-//{
-//    this->         script                = script ;
-//       Object::set_script((const Variant &)script);
-//}
-//
-//Resource
-//godot::Action::get_script(                       )
-//const
-//{
-//	return
-//    this->         script;
-//}
+void
+godot::Action::set_custom_script( const Variant& custom_script)
+{
+    this->         custom_script                = custom_script ;
+}
+
+Variant
+godot::Action::get_custom_script(                       )
+const
+{
+	return
+    this->        custom_script;
+}
 
 
 
