@@ -45,11 +45,11 @@ godot::NPC::_notification(
              if  (current_action == nullptr
              || !(current_action -> are_precondition_collection_met(world_state.ptr())))
              {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", false, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", true, true);
                  action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
              if (action_queue . size            () > 0 )
                  {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", false, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", true, true);
                      auto action =  action_queue.pop_front();
             this->current_action =( Action*)
                                   (&action );
@@ -57,18 +57,18 @@ godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", false, true);
              }
              else
              {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", false, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", true, true);
                  if (this->    has_method                       (
                      this->current_action->get_NPC_method_name()))
                  {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 4", false, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 4", true, true);
                      this->call                                 (
                      this->current_action->get_NPC_method_name());
                  }
                  else
                  {
 //godot::_err_print_error("_notification", "npc.cpp", 60, "method not found", true, true);
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 5", false, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 5", true, true);
                  }
              }
 
