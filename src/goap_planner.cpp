@@ -88,7 +88,7 @@ TypedArray<Action> valid_action_collection       ;
                                            world_state)
            )
            {
-                   valid_action_collection.append((const Variant&)action);
+                   //valid_action_collection.append((const Variant&)action);
            }
     }
 
