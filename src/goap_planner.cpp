@@ -73,6 +73,7 @@ TypedArray<Action>
 godot::GOAPPlanner::plan(      WorldState* world_state)
 const
 {
+godot::_err_print_error("_notification", "goap_planner.cpp", 80,  godot::itos(world_state), false, false);
 TypedArray<Action> valid_action_collection       ;
     for (int index = 0;
              index <     action_collection.size();
@@ -80,9 +81,9 @@ TypedArray<Action> valid_action_collection       ;
     {
            const Action& action=
           (const Action&)action_collection[index];
-        if (true            /* action.*/
-               //are_precondition_collection_met        (
-               //                            world_state)
+        if (             action.
+               are_precondition_collection_met        (
+                                           world_state)
            )
            {
                    valid_action_collection.append((const Variant&)action);
