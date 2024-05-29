@@ -41,7 +41,7 @@ godot::NPC::_notification(
     {
       case   NOTIFICATION_PHYSICS_PROCESS:
          {
-
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 0", true, true);
              if  (current_action == nullptr
              || !(current_action -> are_precondition_collection_met(world_state.ptr())))
              {
