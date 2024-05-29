@@ -114,14 +114,14 @@ runs:
       env:
         SCONS_CACHE:   ${{ github.workspace }}/${{ inputs.gdextension-location }}/${{ inputs.scons-cache }}/
       run: |
-        scons target=template_debug   platform=${{ inputs.platform }} arch=${{ inputs.arch }}                       precision=${{ inputs.float-precision }} production=yes debug_symbols=yes
+        scons target=template_debug   platform=${{ inputs.platform }} arch=${{ inputs.arch }}                       precision=${{ inputs.float-precision }} production=yes
       working-directory:                       ${{ inputs.gdextension-location }}
     - name : Build GDExtension Release Build
       shell: sh
       env:
         SCONS_CACHE:   ${{ github.workspace }}/${{ inputs.gdextension-location }}/${{ inputs.scons-cache }}/
       run: |
-        scons target=template_release platform=${{ inputs.platform }} arch=${{ inputs.arch }}                       precision=${{ inputs.float-precision }} production=yes debug_symbols=yes
+        scons target=template_release platform=${{ inputs.platform }} arch=${{ inputs.arch }}                       precision=${{ inputs.float-precision }} production=yes
       working-directory:                       ${{ inputs.gdextension-location }}
 
 

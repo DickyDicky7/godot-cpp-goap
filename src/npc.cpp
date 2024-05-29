@@ -49,13 +49,13 @@ try
              {
 godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", false, false);
                  //action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
-             if (!action_queue . is_empty())
-                 {
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", true, true);
-                     auto action =  action_queue.pop_front();
-            this->current_action =( Action*)
-                                  (&action );
-                 }
+//             if (!action_queue . is_empty())
+//                 {
+////godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", true, true);
+//                     auto action =  action_queue.pop_front();
+//            this->current_action =( Action*)
+//                                  (&action );
+//                 }
              }
              else
              {
