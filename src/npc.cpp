@@ -54,8 +54,12 @@ godot::NPC::_notification(
              }
              else
              {
-                 this->call                                 (
-                 this->current_action->get_NPC_method_name());
+                 if (this->    has_method                       (
+                     this->current_action->get_NPC_method_name()))
+                 {
+                     this->call                                 (
+                     this->current_action->get_NPC_method_name());
+                 }
              }
 
          }
@@ -138,6 +142,11 @@ const
 //    return
 //    this->      action_queue;
 //}
+
+
+
+
+
 
 
 
