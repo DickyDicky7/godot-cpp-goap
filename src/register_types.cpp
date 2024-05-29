@@ -31,6 +31,7 @@ void   initialize_gdextension_types(ModuleInitializationLevel p_level)
     ClassDB::register_class<ActionScript>();
     ClassDB::register_class<GOAPPlanner>();
     ClassDB::register_class<NPC        >();
+    ClassDB::register_class<   NPCScript>();
 
 }
 
