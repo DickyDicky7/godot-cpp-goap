@@ -73,9 +73,6 @@ TypedArray<Action>
 godot::GOAPPlanner::plan(      WorldState* world_state)
 const
 {
-if (world_state == nullptr)
-godot::_err_print_error("_notification", "goap_planner.cpp", 80,  "null my ass", false, false);
-godot::_err_print_error("_notification", "goap_planner.cpp", 80,  godot::itos(action_collection.size()), false, false);
 TypedArray<Action> valid_action_collection       ;
     for (int index = 0;
              index <     action_collection.size();
@@ -88,73 +85,73 @@ TypedArray<Action> valid_action_collection       ;
                                            world_state)
            )
            {
-                   //valid_action_collection.append((const Variant&)action);
+                   valid_action_collection.append((const Variant&)action);
            }
     }
 
-    //     const Goal*
-    //    chosen_goal= nullptr;
-    //for (int index = 0      ;
-    //         index < goal_collection.size();
-    //       ++index                        )
-    //{
-    //     const Goal& goal=
-    //    (const Goal&)goal_collection[index];
-    // if (world_state ->is_required_state_collection_met(goal.get_desired_state_collection()))
-    //    {
-    //        continue;
-    //    }
-    // if (chosen_goal == nullptr
-    // ||         goal .get_priorities()
-    //  >  chosen_goal->get_priorities())
-    //    {
-    //     chosen_goal =
-    //           &goal ;
-    //    }
-    //}
+         const Goal*
+        chosen_goal= nullptr;
+    for (int index = 0      ;
+             index < goal_collection.size();
+           ++index                        )
+    {
+         const Goal& goal=
+        (const Goal&)goal_collection[index];
+     if (world_state ->is_required_state_collection_met(goal.get_desired_state_collection()))
+        {
+            continue;
+        }
+     if (chosen_goal == nullptr
+     ||         goal .get_priorities()
+      >  chosen_goal->get_priorities())
+        {
+         chosen_goal =
+               &goal ;
+        }
+    }
 
 
-//    if ( chosen_goal == nullptr)
-//         return
-//TypedArray<Action>();
+    if ( chosen_goal == nullptr)
+         return
+TypedArray<Action>();
 
 TypedArray<Action>                                                                  plan_action_collection;
-//    while (
-//         !world_state->is_required_state_collection_met(
-//         chosen_goal ->                             get_desired_state_collection ()))
-//    {
-//     const Action*    best_action = nullptr;
-//    for (int index = 0;
-//             index < valid_action_collection.size();
-//           ++index                                )
-//        {
-//     const Action&         action=
-//    (const Action&)  valid_action_collection[index];
-//           if     (        action.are_precondition_collection_met(world_state))
-//           {
-//           if (       best_action == nullptr
-//           ||              action .get_cost()
-//            <         best_action->get_cost()        )
-//              {
-//                      best_action =
-//                          &action ;
-//              }
-//           }
-//        }
-//
-//        if(best_action == nullptr)
-//                return
-//TypedArray<Action>();
-//
-//           Action
-//           best_action_temp=
-//          *best_action     ;
-//
-//           best_action_temp.apply_effect_collection(world_state);
-//           plan_action_collection.append((const Variant&)*best_action);
-//          valid_action_collection.erase ((const Variant&)*best_action);
-//
-//    }
+    while (
+         !world_state->is_required_state_collection_met(
+         chosen_goal ->                             get_desired_state_collection ()))
+    {
+     const Action*    best_action = nullptr;
+    for (int index = 0;
+             index < valid_action_collection.size();
+           ++index                                )
+        {
+     const Action&         action=
+    (const Action&)  valid_action_collection[index];
+           if     (        action.are_precondition_collection_met(world_state))
+           {
+           if (       best_action == nullptr
+           ||              action .get_cost()
+            <         best_action->get_cost()        )
+              {
+                      best_action =
+                          &action ;
+              }
+           }
+        }
+
+        if(best_action == nullptr)
+                return
+TypedArray<Action>();
+
+           Action
+           best_action_temp=
+          *best_action     ;
+
+           best_action_temp.apply_effect_collection(world_state);
+           plan_action_collection.append((const Variant&)*best_action);
+          valid_action_collection.erase ((const Variant&)*best_action);
+
+    }
 
     return plan_action_collection;
 }
