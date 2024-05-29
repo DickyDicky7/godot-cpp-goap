@@ -79,7 +79,7 @@ ClassDB::bind_method(D_METHOD("update"), &NPC::update);
 
 godot::NPC:: NPC()
 {
-//this->set_script((const Variant&)((Object)NPCScript()));
+this->set_script((const Variant&)((Object)NPCScript()));
 }
 
 godot::NPC::~NPC()
@@ -99,26 +99,26 @@ godot::NPC::~NPC()
 
 void godot::NPC::update()
 {
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 0", false, false);
-    if  (current_action == nullptr
-    || !(current_action -> are_precondition_collection_met(world_state.ptr())))
-    {
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", false, false);
-        action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
-    if (action_queue . size            () > 0 )
-        {
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", false, false);
-            auto action =  action_queue.pop_front();
-   this->current_action =( Action*)
-                         (&action );
-        }
-    }
-    else
-    {
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", false, false);
-        this->call                                 (
-        this->current_action->get_NPC_method_name());
-    }
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 0", false, false);
+//    if  (current_action == nullptr
+//    || !(current_action -> are_precondition_collection_met(world_state.ptr())))
+//    {
+////godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", false, false);
+//        action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
+//    if (action_queue . size            () > 0 )
+//        {
+////godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", false, false);
+//            auto action =  action_queue.pop_front();
+//   this->current_action =( Action*)
+//                         (&action );
+//        }
+//    }
+//    else
+//    {
+////godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", false, false);
+//        this->call                                 (
+//        this->current_action->get_NPC_method_name());
+//    }
 
 }
 
