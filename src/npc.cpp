@@ -60,6 +60,10 @@ godot::NPC::_notification(
                      this->call                                 (
                      this->current_action->get_NPC_method_name());
                  }
+                 else
+                 {
+godot::_err_print_error("_notification", "npc.cpp", 60,"method not found", true, true);
+                 }
              }
 
          }
