@@ -41,7 +41,7 @@ godot::NPC::_notification(
     {
       case   NOTIFICATION_PHYSICS_PROCESS:
          {
-godot::_err_print_error("_notification", "npc.cpp", 44, "LALALA", false, false);
+//godot::_err_print_error("_notification", "npc.cpp", 44, "LALALA", false, false);
 try
 {
              if  (current_action == nullptr
