@@ -62,8 +62,8 @@ const  Dictionary&    required_state_collection    ) const
                       required_state_collection.keys();
     for (int index = 0; index < keys.size();  ++index)
     {
-     if (required_state_collection.has(keys[index]) && state_collection.has(keys[index]) &&             required_state_collection.get(keys[index], 0)
-     !=                        state_collection.get(keys[index], 0)
+     if (required_state_collection.has(keys[index]) && state_collection.has(keys[index]) &&             required_state_collection.get(keys[index], true)
+     !=                        state_collection.get(keys[index], true)
         )
         {
              return  0;

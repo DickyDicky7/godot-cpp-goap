@@ -59,18 +59,18 @@ try
              }
              else
              {
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", true, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", true, true);
                  if (this->    has_method                       (
                      this->current_action->get_NPC_method_name()))
                  {
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 4", true, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 4", true, true);
                      this->call                                 (
                      this->current_action->get_NPC_method_name());
                  }
                  else
                  {
 ////godot::_err_print_error("_notification", "npc.cpp", 60, "method not found", true, true);
-//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 5", true, true);
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 5", true, true);
                  }
              }
 
@@ -87,6 +87,7 @@ godot::_err_print_error("_notification", "npc.cpp", 80,  godot::itos(world_state
 
 godot::NPC:: NPC()
 {
+
 //this->set_script((const Variant&)((Object)NPCScript()));
 }
 
