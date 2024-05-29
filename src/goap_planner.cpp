@@ -73,7 +73,8 @@ TypedArray<Action>
 godot::GOAPPlanner::plan(      WorldState* world_state)
 const
 {
-godot::_err_print_error("_notification", "goap_planner.cpp", 80,  godot::itos(world_state), false, false);
+if (world_state == nullptr)
+godot::_err_print_error("_notification", "goap_planner.cpp", 80,  "null my ass", false, false);
 TypedArray<Action> valid_action_collection       ;
     for (int index = 0;
              index <     action_collection.size();
