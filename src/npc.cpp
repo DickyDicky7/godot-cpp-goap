@@ -48,7 +48,7 @@ try
              || !(current_action -> are_precondition_collection_met(world_state.ptr())))
              {
 //godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", true, true);
-                 //action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
+                 action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
              if (action_queue . size            () > 0 )
                  {
 //godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", true, true);
