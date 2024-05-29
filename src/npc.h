@@ -29,13 +29,15 @@ protected:
                      Action*current_action      ;
           TypedArray<Action>        action_queue;
 
+          void _notification
+         (int p_notification);
 public   :
 
           NPC();
          ~NPC();
 
-          virtual void         _process(double delta) override;
-          virtual void _physics_process(double delta) override;
+          //virtual void         _process(double delta) override;
+          //virtual void _physics_process(double delta) override;
 
           void            set_world_state(const Ref<WorldState>& world_state)      ;
           Ref<WorldState> get_world_state(                                  ) const;

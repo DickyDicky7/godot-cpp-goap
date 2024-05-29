@@ -32,6 +32,37 @@ godot::NPC::_bind_methods()
                                             , "get_goap_planner");
 }
 
+void
+godot::NPC::_notification(
+       int p_notification)
+{
+    switch(p_notification)
+    {
+      case   NOTIFICATION_PROCESS:
+         {
+
+             if  (current_action == nullptr
+             || !(current_action -> are_precondition_collection_met(world_state.ptr())))
+             {
+                 action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
+             if (action_queue . size            () > 0 )
+                 {
+                     auto action =  action_queue.pop_front();
+            this->current_action =( Action*)
+                                  (&action );
+                 }
+             }
+             else
+             {
+                 this->call                                 (
+                 this->current_action->get_NPC_method_name());
+             }
+
+         }
+         break;
+    }
+}
+
 godot::NPC:: NPC()
 {
 }
@@ -40,32 +71,32 @@ godot::NPC::~NPC()
 {
 }
 
-void
-godot::NPC::        _process(double delta)
-{
-    if  (current_action == nullptr
-    || !(current_action -> are_precondition_collection_met(world_state.ptr())))
-    {
-        action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
-    if (action_queue . size            () > 0 )
-        {
-            auto action =  action_queue.pop_front();
-   this->current_action =( Action*)
-                         (&action );
-        }
-    }
-    else
-    {
-        this->call                                 (
-        this->current_action->get_NPC_method_name());
-    }
-}
-
-void
-godot::NPC::_physics_process(double delta)
-{
-
-}
+//void
+//godot::NPC::        _process(double delta)
+//{
+//    if  (current_action == nullptr
+//    || !(current_action -> are_precondition_collection_met(world_state.ptr())))
+//    {
+//        action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
+//    if (action_queue . size            () > 0 )
+//        {
+//            auto action =  action_queue.pop_front();
+//   this->current_action =( Action*)
+//                         (&action );
+//        }
+//    }
+//    else
+//    {
+//        this->call                                 (
+//        this->current_action->get_NPC_method_name());
+//    }
+//}
+//
+//void
+//godot::NPC::_physics_process(double delta)
+//{
+//
+//}
 
 void
 godot::NPC::set_world_state(const Ref<WorldState>& world_state)
