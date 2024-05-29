@@ -79,7 +79,7 @@ ClassDB::bind_method(D_METHOD("update"), &NPC::update);
 
 godot::NPC:: NPC()
 {
-this->set_script((const Variant&)((Object)NPCScript()));
+//this->set_script((const Variant&)((Object)NPCScript()));
 }
 
 godot::NPC::~NPC()
