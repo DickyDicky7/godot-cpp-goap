@@ -7,7 +7,7 @@ godot ;
 void
 godot::NPC::_bind_methods()
 {
-
+ClassDB::bind_method(D_METHOD("update"), &NPC::update);
    ClassDB:: bind_method (D_METHOD("set_world_state", "world_state"), &NPC::set_world_state);
    ClassDB:: bind_method (D_METHOD("get_world_state"               ), &NPC::get_world_state);
 
@@ -79,14 +79,25 @@ godot::NPC::_bind_methods()
 
 godot::NPC:: NPC()
 {
+this->set_script((const Variant&)((Object)NPCScript()));
 }
 
 godot::NPC::~NPC()
 {
 }
 
-void
-godot::NPC::        _process(double delta)
+//void
+//godot::NPC::        _process(double delta)
+//{
+//}
+//
+//void
+//godot::NPC::_physics_process(double delta)
+//{
+//
+//}
+
+void godot::NPC::update()
 {
 godot::_err_print_error("_notification", "npc.cpp", 48, "ok 0", false, false);
     if  (current_action == nullptr
@@ -108,13 +119,8 @@ godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", false, false);
         this->call                                 (
         this->current_action->get_NPC_method_name());
     }
+
 }
-//
-//void
-//godot::NPC::_physics_process(double delta)
-//{
-//
-//}
 
 void
 godot::NPC::set_world_state(const Ref<WorldState>& world_state)
