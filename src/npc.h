@@ -51,8 +51,8 @@ protected:
                      Action*current_action      ;
           TypedArray<Action>        action_queue;
 
-         // void _notification
-         //(int p_notification);
+          void _notification
+         (int p_notification);
 public   :
 
           NPC();
