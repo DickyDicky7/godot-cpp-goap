@@ -81,8 +81,8 @@ TypedArray<Action> valid_action_collection       ;
            const Action& action=
           (const Action&)action_collection[index];
         if (             action.
-               are_precondition_collection_met        (
-                                           world_state)
+               //are_precondition_collection_met        (
+               //                            world_state)
            )
            {
                    valid_action_collection.append((const Variant&)action);
