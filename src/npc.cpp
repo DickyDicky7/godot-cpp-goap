@@ -36,6 +36,7 @@ void
 godot::NPC::_notification(
        int p_notification)
 {
+godot::_err_print_error("_notification", "npc.cpp", 39, "call", true, true);
     switch(p_notification)
     {
       case   NOTIFICATION_PROCESS:
@@ -62,7 +63,7 @@ godot::NPC::_notification(
                  }
                  else
                  {
-godot::_err_print_error("_notification", "npc.cpp", 60,"method not found", true, true);
+godot::_err_print_error("_notification", "npc.cpp", 60, "method not found", true, true);
                  }
              }
 
