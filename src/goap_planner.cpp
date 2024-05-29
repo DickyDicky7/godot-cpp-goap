@@ -80,7 +80,7 @@ TypedArray<Action> valid_action_collection       ;
     {
            const Action& action=
           (const Action&)action_collection[index];
-        if (             action.
+        if (true            /* action.*/
                //are_precondition_collection_met        (
                //                            world_state)
            )
