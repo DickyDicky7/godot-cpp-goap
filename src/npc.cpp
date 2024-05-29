@@ -77,7 +77,8 @@ try
 }
 catch (...)
 {
-godot::_err_print_error("_notification", "npc.cpp", 80,  String(world_state.ptr()), false, false);
+godot::_err_print_error("_notification", "npc.cpp", 80,  String(world_state.is_null()), false, false);
+//godot::_err_print_error("_notification", "npc.cpp", 80,  String(world_state.is_valid()), false, false);
 }
          }
          break;
