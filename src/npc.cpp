@@ -32,50 +32,50 @@ godot::NPC::_bind_methods()
                                             , "get_goap_planner");
 }
 
-void
-godot::NPC::_notification(
-       int p_notification)
-{
-//godot::_err_print_error("_notification", "npc.cpp", 39, "call", true, true);
-    switch(p_notification)
-    {
-      case   NOTIFICATION_PHYSICS_PROCESS:
-         {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 0", true, true);
-             if  (current_action == nullptr
-             || !(current_action -> are_precondition_collection_met(world_state.ptr())))
-             {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", true, true);
-                 action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
-             if (action_queue . size            () > 0 )
-                 {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", true, true);
-                     auto action =  action_queue.pop_front();
-            this->current_action =( Action*)
-                                  (&action );
-                 }
-             }
-             else
-             {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", true, true);
-                 if (this->    has_method                       (
-                     this->current_action->get_NPC_method_name()))
-                 {
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 4", true, true);
-                     this->call                                 (
-                     this->current_action->get_NPC_method_name());
-                 }
-                 else
-                 {
-//godot::_err_print_error("_notification", "npc.cpp", 60, "method not found", true, true);
-godot::_err_print_error("_notification", "npc.cpp", 48, "ok 5", true, true);
-                 }
-             }
-
-         }
-         break;
-    }
-}
+//void
+//godot::NPC::_notification(
+//       int p_notification)
+//{
+////godot::_err_print_error("_notification", "npc.cpp", 39, "call", true, true);
+//    switch(p_notification)
+//    {
+//      case   NOTIFICATION_PHYSICS_PROCESS:
+//         {
+//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 0", true, true);
+//             if  (current_action == nullptr
+//             || !(current_action -> are_precondition_collection_met(world_state.ptr())))
+//             {
+//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", true, true);
+//                 action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
+//             if (action_queue . size            () > 0 )
+//                 {
+//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", true, true);
+//                     auto action =  action_queue.pop_front();
+//            this->current_action =( Action*)
+//                                  (&action );
+//                 }
+//             }
+//             else
+//             {
+//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", true, true);
+//                 if (this->    has_method                       (
+//                     this->current_action->get_NPC_method_name()))
+//                 {
+//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 4", true, true);
+//                     this->call                                 (
+//                     this->current_action->get_NPC_method_name());
+//                 }
+//                 else
+//                 {
+////godot::_err_print_error("_notification", "npc.cpp", 60, "method not found", true, true);
+//godot::_err_print_error("_notification", "npc.cpp", 48, "ok 5", true, true);
+//                 }
+//             }
+//
+//         }
+//         break;
+//    }
+//}
 
 godot::NPC:: NPC()
 {
@@ -85,26 +85,30 @@ godot::NPC::~NPC()
 {
 }
 
-//void
-//godot::NPC::        _process(double delta)
-//{
-//    if  (current_action == nullptr
-//    || !(current_action -> are_precondition_collection_met(world_state.ptr())))
-//    {
-//        action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
-//    if (action_queue . size            () > 0 )
-//        {
-//            auto action =  action_queue.pop_front();
-//   this->current_action =( Action*)
-//                         (&action );
-//        }
-//    }
-//    else
-//    {
-//        this->call                                 (
-//        this->current_action->get_NPC_method_name());
-//    }
-//}
+void
+godot::NPC::        _process(double delta)
+{
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 0", false, false);
+    if  (current_action == nullptr
+    || !(current_action -> are_precondition_collection_met(world_state.ptr())))
+    {
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 1", false, false);
+        action_queue = goap_planner.ptr()->plan           (world_state.ptr())  ;
+    if (action_queue . size            () > 0 )
+        {
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 2", false, false);
+            auto action =  action_queue.pop_front();
+   this->current_action =( Action*)
+                         (&action );
+        }
+    }
+    else
+    {
+godot::_err_print_error("_notification", "npc.cpp", 48, "ok 3", false, false);
+        this->call                                 (
+        this->current_action->get_NPC_method_name());
+    }
+}
 //
 //void
 //godot::NPC::_physics_process(double delta)
